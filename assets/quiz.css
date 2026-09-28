@@ -27,6 +27,7 @@
   padding: 0.55rem 0.8rem;
   border: 1px solid var(--rule);
   background: var(--paper);
+  color: var(--ink);
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.9rem;
