@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 0001 — What Agentic AI Actually Is</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/diagram.css">
+<link rel="stylesheet" href="../assets/quiz.css">
+<link rel="stylesheet" href="../assets/lang-switch.css">
+<script src="../assets/quiz.js"></script>
+<script src="../assets/lang-switch.js"></script>
+</head>
+<body>
+
+<div class="lang-switch">
+  <button data-lang="en">EN</button>
+  <button data-lang="de">DE</button>
+  <button data-lang="es">ES</button>
+</div>
+
+<header class="lesson-header">
+  <p class="eyebrow" data-i18n="en">Lesson 0001 · Agentic AI</p>
+  <p class="eyebrow" data-i18n="de">Lektion 0001 · Agentic AI</p>
+  <p class="eyebrow" data-i18n="es">Lección 0001 · Agentic AI</p>
+
+  <h1 data-i18n="en">What Agentic AI Actually Is</h1>
+  <h1 data-i18n="de">Was Agentic AI eigentlich ist</h1>
+  <h1 data-i18n="es">Qué es realmente la IA agéntica</h1>
+
+  <p class="subtitle" data-i18n="en">One idea carries almost the entire buzzword: the difference between AI that talks, and AI that acts.</p>
+  <p class="subtitle" data-i18n="de">Eine einzige Idee trägt fast das ganze Buzzword: der Unterschied zwischen KI, die redet, und KI, die handelt.</p>
+  <p class="subtitle" data-i18n="es">Una sola idea sostiene casi toda la palabra de moda: la diferencia entre una IA que habla y una IA que actúa.</p>
+</header>
+
+<main>
+
+<div class="mission-tie" data-i18n="en">
+  <strong>Why this first.</strong> "Agentic AI" is the term you'll keep hitting in the press, at work,
+  and in every vendor's pitch this year. Before the glossary of individual buzzwords means anything, you
+  need the one distinction they all hang off — everything after this lesson builds on it.
+</div>
+<div class="mission-tie" data-i18n="de">
+  <strong>Warum das zuerst.</strong> „Agentic AI" ist der Begriff, dem du dieses Jahr ständig in der
+  Presse, bei der Arbeit und in jedem Verkaufspitch begegnen wirst. Bevor das Glossar der einzelnen
+  Buzzwords etwas bedeutet, brauchst du diese eine Unterscheidung, an der alle hängen – alles nach dieser
+  Lektion baut darauf auf.
+</div>
+<div class="mission-tie" data-i18n="es">
+  <strong>Por qué esto primero.</strong> "Agentic AI" es el término con el que te vas a encontrar
+  constantemente este año en la prensa, en el trabajo y en cada presentación de un proveedor. Antes de que
+  el glosario de palabras sueltas tenga sentido, necesitas esta única distinción de la que todas dependen
+  — todo lo que viene después de esta lección se construye sobre ella.
+</div>
+
+<h2 data-i18n="en">The one distinction that matters</h2>
+<h2 data-i18n="de">Die eine Unterscheidung, auf die es ankommt</h2>
+<h2 data-i18n="es">La única distinción que importa</h2>
+
+<p data-i18n="en">A regular AI chatbot is a very capable answering machine: you ask, it answers, done. It has no memory
+of your goals beyond the current chat, and it can't do anything in the world — it can only produce text.</p>
+<p data-i18n="de">Ein normaler KI-Chatbot ist eine sehr fähige Antwortmaschine: du fragst, er antwortet, fertig. Er hat
+kein Gedächtnis für deine Ziele über den aktuellen Chat hinaus, und er kann nichts in der Welt bewirken –
+er kann nur Text erzeugen.</p>
+<p data-i18n="es">Un chatbot de IA normal es una máquina de responder muy capaz: preguntas, responde, listo. No tiene
+memoria de tus objetivos más allá del chat actual, y no puede hacer nada en el mundo real — solo puede
+producir texto.</p>
+
+<p data-i18n="en"><strong>Agentic AI</strong> is different in one specific way: it's given a goal, and it plans and takes
+a series of steps on its own to get there — checking its own progress, using tools to actually do things
+(not just describe them), and adjusting when something doesn't go as expected. Anthropic, one of the
+companies building these systems, puts it plainly: an agent is a system where the AI "dynamically directs
+its own process," rather than following a fixed sequence a person designed in advance.</p>
+<p data-i18n="de"><strong>Agentic AI</strong> unterscheidet sich in einem ganz bestimmten Punkt: Sie bekommt ein Ziel
+und plant und geht selbstständig eine Reihe von Schritten, um es zu erreichen – prüft dabei ihren eigenen
+Fortschritt, nutzt Werkzeuge, um Dinge wirklich zu tun (nicht nur zu beschreiben), und passt sich an, wenn
+etwas nicht wie erwartet läuft. Anthropic, eines der Unternehmen, die solche Systeme bauen, drückt es
+schlicht aus: Ein Agent ist ein System, bei dem die KI „ihren eigenen Prozess steuert", statt einer
+festen, von einem Menschen im Voraus entworfenen Abfolge zu folgen.</p>
+<p data-i18n="es"><strong>La IA agéntica</strong> es distinta en un aspecto muy concreto: se le da un objetivo, y ella
+misma planifica y da una serie de pasos por su cuenta para lograrlo — comprobando su propio progreso,
+usando herramientas para realmente hacer cosas (no solo describirlas), y ajustándose cuando algo no sale
+como se esperaba. Anthropic, una de las empresas que construyen estos sistemas, lo resume así: un agente
+es un sistema en el que la IA "dirige dinámicamente su propio proceso", en lugar de seguir una secuencia
+fija diseñada de antemano por una persona.</p>
+
+<div class="compare" data-i18n="en">
+  <div class="side">
+    <p class="side-label">Regular chatbot</p>
+    <p>"What's the total of these three invoices?"</p>
+    <p>→ Answers once. Stops. Has done nothing except talk.</p>
+  </div>
+  <div class="side">
+    <p class="side-label">Agentic AI</p>
+    <p>"Reconcile this month's invoices against the bank statement and flag anything that doesn't match."</p>
+    <p>→ Reads the invoices, checks each one against the statement, decides what counts as a mismatch,
+    and reports back — several self-directed steps, not one.</p>
+  </div>
+</div>
+<div class="compare" data-i18n="de">
+  <div class="side">
+    <p class="side-label">Normaler Chatbot</p>
+    <p>„Wie hoch ist die Summe dieser drei Rechnungen?"</p>
+    <p>→ Antwortet einmal. Hört auf. Hat außer Reden nichts getan.</p>
+  </div>
+  <div class="side">
+    <p class="side-label">Agentic AI</p>
+    <p>„Gleiche die Rechnungen dieses Monats mit dem Kontoauszug ab und melde alles, was nicht passt."</p>
+    <p>→ Liest die Rechnungen, prüft jede einzelne gegen den Kontoauszug, entscheidet, was als
+    Abweichung zählt, und meldet zurück — mehrere selbstgesteuerte Schritte, nicht einer.</p>
+  </div>
+</div>
+<div class="compare" data-i18n="es">
+  <div class="side">
+    <p class="side-label">Chatbot normal</p>
+    <p>"¿Cuál es el total de estas tres facturas?"</p>
+    <p>→ Responde una vez. Se detiene. No ha hecho nada más que hablar.</p>
+  </div>
+  <div class="side">
+    <p class="side-label">IA agéntica</p>
+    <p>"Concilia las facturas de este mes con el extracto bancario y marca cualquier cosa que no cuadre."</p>
+    <p>→ Lee las facturas, comprueba cada una contra el extracto, decide qué cuenta como discrepancia,
+    y reporta el resultado — varios pasos autodirigidos, no uno solo.</p>
+  </div>
+</div>
+
+<p class="citation" data-i18n="en"><a href="https://www.anthropic.com/engineering/building-effective-agents">Building
+Effective Agents — Anthropic</a></p>
+<p class="citation" data-i18n="de"><a href="https://www.anthropic.com/engineering/building-effective-agents">Building
+Effective Agents — Anthropic</a></p>
+<p class="citation" data-i18n="es"><a href="https://www.anthropic.com/engineering/building-effective-agents">Building
+Effective Agents — Anthropic</a></p>
+
+<h2 data-i18n="en">What's actually happening under the hood</h2>
+<h2 data-i18n="de">Was tatsächlich im Hintergrund passiert</h2>
+<h2 data-i18n="es">Qué está pasando realmente por debajo</h2>
+
+<p data-i18n="en">Every agentic system runs roughly the same loop, over and over, until the task is done or it needs your
+input:</p>
+<p data-i18n="de">Jedes agentische System durchläuft ungefähr dieselbe Schleife, immer wieder, bis die Aufgabe erledigt
+ist oder es deine Eingabe braucht:</p>
+<p data-i18n="es">Todo sistema agéntico ejecuta más o menos el mismo bucle, una y otra vez, hasta que la tarea está
+hecha o necesita tu intervención:</p>
+
+<div class="pipeline" data-i18n="en">
+  <div class="step"><strong>Plan</strong><span>decide the next step</span></div>
+  <div class="step"><strong>Act</strong><span>use a tool to do it</span></div>
+  <div class="step"><strong>Check</strong><span>look at the result</span></div>
+  <div class="step"><strong>Repeat / Stop</strong><span>continue, or hand back to you</span></div>
+</div>
+<div class="pipeline" data-i18n="de">
+  <div class="step"><strong>Planen</strong><span>nächsten Schritt festlegen</span></div>
+  <div class="step"><strong>Handeln</strong><span>mit einem Werkzeug ausführen</span></div>
+  <div class="step"><strong>Prüfen</strong><span>Ergebnis ansehen</span></div>
+  <div class="step"><strong>Wiederholen / Stopp</strong><span>weitermachen oder an dich zurückgeben</span></div>
+</div>
+<div class="pipeline" data-i18n="es">
+  <div class="step"><strong>Planificar</strong><span>decidir el siguiente paso</span></div>
+  <div class="step"><strong>Actuar</strong><span>usar una herramienta para hacerlo</span></div>
+  <div class="step"><strong>Comprobar</strong><span>revisar el resultado</span></div>
+  <div class="step"><strong>Repetir / Parar</strong><span>continuar, o devolverte el control</span></div>
+</div>
+
+<p data-i18n="en">The "tools" in that loop are what make it more than a chatbot — the ability to search, read a file,
+update a spreadsheet, send a message. No tools, no real action, just talk. This loop, and the software
+that runs it, is what the glossary calls a "harness" — worth knowing the word, but not something you'll
+need to think about day to day.</p>
+<p data-i18n="de">Die „Werkzeuge" in dieser Schleife sind es, die aus ihr mehr als einen Chatbot machen – die
+Fähigkeit, zu suchen, eine Datei zu lesen, eine Tabelle zu aktualisieren, eine Nachricht zu verschicken.
+Keine Werkzeuge, keine echte Aktion, nur Reden. Diese Schleife und die Software, die sie ausführt, nennt
+das Glossar einen „Harness" – gut, das Wort zu kennen, aber nichts, worüber du im Alltag nachdenken
+musst.</p>
+<p data-i18n="es">Las "herramientas" en ese bucle son lo que lo convierte en algo más que un chatbot — la capacidad de
+buscar, leer un archivo, actualizar una hoja de cálculo, enviar un mensaje. Sin herramientas, no hay
+acción real, solo palabras. Ese bucle, y el software que lo ejecuta, es lo que el glosario llama
+"harness" — conviene conocer la palabra, pero no es algo en lo que tengas que pensar en el día a día.</p>
+
+<h2 data-i18n="en">Where you'll meet this at work</h2>
+<h2 data-i18n="de">Wo dir das bei der Arbeit begegnet</h2>
+<h2 data-i18n="es">Dónde te encontrarás esto en el trabajo</h2>
+
+<p data-i18n="en">Per the accountants' own professional body (ICAEW), the use cases landing first in finance and
+accounting are ones with high volume and clear rules, where a mistake is cheap to catch:</p>
+<p data-i18n="de">Laut dem eigenen Berufsverband der Buchhalter (ICAEW) setzen sich in Finanzen und Rechnungswesen zuerst
+die Anwendungsfälle mit hohem Volumen und klaren Regeln durch, bei denen ein Fehler billig zu entdecken
+ist:</p>
+<p data-i18n="es">Según el propio colegio profesional de los contables (ICAEW), los casos de uso que primero se
+están imponiendo en finanzas y contabilidad son los de alto volumen y reglas claras, donde un error es
+barato de detectar:</p>
+
+<ul data-i18n="en">
+  <li><strong>Invoice matching (accounts payable).</strong> An agent reads incoming invoices, matches them
+  against purchase orders and receipts, and only escalates the ones that don't line up.</li>
+  <li><strong>Month-end close.</strong> An agent works through the close checklist, prepares routine
+  recurring entries, checks reconciliations, and flags what's still outstanding to the controller.</li>
+  <li><strong>Collections and disputes.</strong> An agent handles routine payment reminders and pulls
+  together the paperwork for a dispute, rather than a person chasing each one manually.</li>
+</ul>
+<ul data-i18n="de">
+  <li><strong>Rechnungsabgleich (Kreditorenbuchhaltung).</strong> Ein Agent liest eingehende Rechnungen,
+  gleicht sie mit Bestellungen und Lieferscheinen ab und eskaliert nur die, die nicht zusammenpassen.</li>
+  <li><strong>Monatsabschluss.</strong> Ein Agent arbeitet die Abschluss-Checkliste ab, bereitet
+  wiederkehrende Routinebuchungen vor, prüft Kontenabstimmungen und meldet dem Controller, was noch
+  offen ist.</li>
+  <li><strong>Mahnwesen und Reklamationen.</strong> Ein Agent kümmert sich um routinemäßige
+  Zahlungserinnerungen und stellt die Unterlagen für eine Reklamation zusammen, statt dass eine Person
+  jeden Fall einzeln von Hand verfolgt.</li>
+</ul>
+<ul data-i18n="es">
+  <li><strong>Conciliación de facturas (cuentas por pagar).</strong> Un agente lee las facturas
+  entrantes, las coteja con pedidos de compra y albaranes, y solo escala las que no cuadran.</li>
+  <li><strong>Cierre de fin de mes.</strong> Un agente recorre la checklist de cierre, prepara los
+  asientos recurrentes rutinarios, comprueba las conciliaciones y avisa al controller de lo que sigue
+  pendiente.</li>
+  <li><strong>Cobros y disputas.</strong> Un agente se ocupa de los recordatorios de pago rutinarios y
+  reúne la documentación de una disputa, en lugar de que una persona persiga cada caso a mano.</li>
+</ul>
+
+<p data-i18n="en">Notice the pattern: agents are landing on the repetitive, rule-governed slice of the job — freeing time
+for the judgment calls that still need a person. None of the current use cases hand over sign-off
+authority on anything material without a human checking first.</p>
+<p data-i18n="de">Das Muster: Agenten übernehmen den sich wiederholenden, regelgeleiteten Teil der Arbeit – und
+schaffen so Zeit für die Ermessensentscheidungen, die weiterhin einen Menschen brauchen. Keiner der
+aktuellen Anwendungsfälle gibt Freigabebefugnis über irgendetwas Wesentliches ab, ohne dass vorher ein
+Mensch prüft.</p>
+<p data-i18n="es">Fíjate en el patrón: los agentes se están quedando con la parte repetitiva y basada en reglas del
+trabajo — liberando tiempo para las decisiones de criterio que todavía necesitan a una persona. Ninguno
+de los casos de uso actuales cede la autoridad de aprobación sobre algo material sin que un humano
+compruebe antes.</p>
+
+<p class="citation" data-i18n="en"><a href="https://www.icaew.com/insights/viewpoints-on-the-news/2025/nov-2025/ai-agents-four-use-cases-for-accountants">AI
+agents: four use cases for accountants — ICAEW</a></p>
+<p class="citation" data-i18n="de"><a href="https://www.icaew.com/insights/viewpoints-on-the-news/2025/nov-2025/ai-agents-four-use-cases-for-accountants">AI
+agents: four use cases for accountants — ICAEW</a></p>
+<p class="citation" data-i18n="es"><a href="https://www.icaew.com/insights/viewpoints-on-the-news/2025/nov-2025/ai-agents-four-use-cases-for-accountants">AI
+agents: four use cases for accountants — ICAEW</a></p>
+
+<h2 data-i18n="en">Where you'll meet this at home</h2>
+<h2 data-i18n="de">Wo dir das zu Hause begegnet</h2>
+<h2 data-i18n="es">Dónde te encontrarás esto en casa</h2>
+
+<ul data-i18n="en">
+  <li><strong>Trip planning.</strong> "Plan a long weekend for two in Lisbon under €800, book nothing
+  yet" — the agent researches flights, hotels, and an itinerary, and comes back with options instead of
+  ten separate answers to ten separate questions.</li>
+  <li><strong>Inbox triage.</strong> An email assistant that reads new mail, drafts replies to the routine
+  ones, and only surfaces the messages that actually need your judgment.</li>
+  <li><strong>Shopping research.</strong> "Find the best-value baby monitor under €100 with good battery
+  life" — it searches, compares, and reports back with reasoning, rather than you opening fifteen tabs.</li>
+</ul>
+<ul data-i18n="de">
+  <li><strong>Reiseplanung.</strong> „Plane ein verlängertes Wochenende für zwei in Lissabon, unter 800 €,
+  noch nichts buchen" – der Agent recherchiert Flüge, Hotels und ein Programm und kommt mit Optionen
+  zurück, statt zehn einzelne Antworten auf zehn einzelne Fragen zu geben.</li>
+  <li><strong>Posteingang sortieren.</strong> Ein E-Mail-Assistent, der neue Nachrichten liest, Antworten
+  auf die Routinefälle entwirft und nur die Nachrichten hervorhebt, die wirklich deine Einschätzung
+  brauchen.</li>
+  <li><strong>Einkaufsrecherche.</strong> „Finde das beste Preis-Leistungs-Babyphone unter 100 € mit
+  guter Akkulaufzeit" – er sucht, vergleicht und meldet mit Begründung zurück, statt dass du fünfzehn
+  Tabs öffnest.</li>
+</ul>
+<ul data-i18n="es">
+  <li><strong>Planificación de viajes.</strong> "Planifica un fin de semana largo para dos en Lisboa por
+  menos de 800 €, no reserves nada todavía" — el agente investiga vuelos, hoteles e itinerario, y vuelve
+  con opciones en lugar de diez respuestas sueltas a diez preguntas sueltas.</li>
+  <li><strong>Organizar el correo.</strong> Un asistente de correo que lee los mensajes nuevos, redacta
+  respuestas a los rutinarios, y solo te muestra los mensajes que de verdad necesitan tu criterio.</li>
+  <li><strong>Investigar antes de comprar.</strong> "Encuentra el mejor vigilabebés calidad-precio por
+  menos de 100 € con buena batería" — busca, compara y reporta con su razonamiento, en vez de que tú
+  abras quince pestañas.</li>
+</ul>
+
+<div class="gotcha" data-i18n="en">
+  <strong>The catch.</strong> An agent that can <em>act</em> can also act on something wrong — and AI
+  models still confidently state false things (a <em>hallucination</em>, see the glossary). The more
+  autonomy you give an agent, the more that matters. This is why "human in the loop" — a person approving
+  the important step before it happens — is the standard safety pattern right now, not a nice-to-have.
+</div>
+<div class="gotcha" data-i18n="de">
+  <strong>Der Haken.</strong> Ein Agent, der <em>handeln</em> kann, kann auch auf Basis von etwas Falschem
+  handeln – und KI-Modelle behaupten immer noch überzeugt falsche Dinge (eine <em>Halluzination</em>, siehe
+  Glossar). Je mehr Autonomie ein Agent bekommt, desto mehr zählt das. Deshalb ist „Mensch im Prozess" –
+  eine Person, die den wichtigen Schritt freigibt, bevor er passiert – gerade das Standard-Sicherheitsmuster,
+  kein nettes Extra.
+</div>
+<div class="gotcha" data-i18n="es">
+  <strong>La trampa.</strong> Un agente que puede <em>actuar</em> también puede actuar sobre algo
+  equivocado — y los modelos de IA todavía afirman cosas falsas con total confianza (una
+  <em>alucinación</em>, ver el glosario). Cuanta más autonomía le des a un agente, más importa esto. Por
+  eso "humano en el bucle" — una persona que aprueba el paso importante antes de que ocurra — es ahora
+  mismo el patrón de seguridad estándar, no un extra opcional.
+</div>
+
+<h2 data-i18n="en">Practice</h2>
+<h2 data-i18n="de">Übung</h2>
+<h2 data-i18n="es">Práctica</h2>
+
+<div class="quiz-question" data-i18n="en">
+  <p class="quiz-prompt">A tool always extracts data from a receipt, then always categorizes it, then
+  always files it — in that exact order, every time, no exceptions. Is this agentic AI?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Yes — it uses AI and does multiple steps</button>
+    <button class="quiz-option" data-correct="true">No — it's a fixed workflow, not an agent</button>
+    <button class="quiz-option" data-correct="false">Yes — any tool that touches your files is agentic</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">Using AI and doing several steps isn't enough on its own — what makes something
+    agentic is the AI deciding the steps itself. A fixed, always-the-same-order sequence is a workflow,
+    even if AI does the work at each stage. Genuinely agentic would look like: the tool decides, based on
+    what it finds, whether this receipt needs a human's eyes at all.</p>
+  </div>
+</div>
+<div class="quiz-question" data-i18n="de">
+  <p class="quiz-prompt">Ein Tool extrahiert aus einem Beleg immer die Daten, kategorisiert ihn dann immer
+  und legt ihn dann immer ab – genau in dieser Reihenfolge, jedes Mal, ohne Ausnahme. Ist das Agentic AI?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Ja — es nutzt KI und macht mehrere Schritte</button>
+    <button class="quiz-option" data-correct="true">Nein — es ist ein fester Workflow, kein Agent</button>
+    <button class="quiz-option" data-correct="false">Ja — jedes Tool, das deine Dateien anfasst, ist agentisch</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">KI zu nutzen und mehrere Schritte zu machen reicht allein nicht – agentisch wird
+    etwas dadurch, dass die KI die Schritte selbst festlegt. Eine feste, immer gleiche Reihenfolge ist
+    ein Workflow, selbst wenn KI bei jedem Schritt die Arbeit macht. Wirklich agentisch wäre: Das Tool
+    entscheidet anhand dessen, was es findet, ob dieser Beleg überhaupt menschliche Augen braucht.</p>
+  </div>
+</div>
+<div class="quiz-question" data-i18n="es">
+  <p class="quiz-prompt">Una herramienta siempre extrae los datos de un recibo, luego siempre lo
+  categoriza, y luego siempre lo archiva — exactamente en ese orden, cada vez, sin excepciones. ¿Es esto
+  IA agéntica?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Sí — usa IA y hace varios pasos</button>
+    <button class="quiz-option" data-correct="true">No — es un flujo de trabajo fijo, no un agente</button>
+    <button class="quiz-option" data-correct="false">Sí — cualquier herramienta que toca tus archivos es agéntica</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">Usar IA y hacer varios pasos no basta por sí solo — lo que hace que algo sea
+    agéntico es que la IA decida los pasos por sí misma. Una secuencia fija, siempre en el mismo orden,
+    es un flujo de trabajo, aunque la IA haga el trabajo en cada etapa. Algo genuinamente agéntico sería:
+    la herramienta decide, según lo que encuentra, si este recibo necesita ojos humanos siquiera.</p>
+  </div>
+</div>
+
+<div class="quiz-question" data-i18n="en">
+  <p class="quiz-prompt">Why does an agent's ability to use "tools" matter so much?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Tools make the model's writing sound more natural</button>
+    <button class="quiz-option" data-correct="true">Tools let it actually do things, not just describe them</button>
+    <button class="quiz-option" data-correct="false">Tools are what let it remember past conversations</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">Without tools, a model can only produce text — describing what someone should do.
+    With tools (searching, reading a file, sending an email, updating a system), it can carry out the
+    action itself. That's the practical line between "chatbot" and "agent that gets work done."</p>
+  </div>
+</div>
+<div class="quiz-question" data-i18n="de">
+  <p class="quiz-prompt">Warum ist die Fähigkeit eines Agenten, „Werkzeuge" zu nutzen, so wichtig?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Werkzeuge lassen den Text des Modells natürlicher klingen</button>
+    <button class="quiz-option" data-correct="true">Werkzeuge lassen ihn Dinge wirklich tun, nicht nur beschreiben</button>
+    <button class="quiz-option" data-correct="false">Werkzeuge sind das, was ihm erlaubt, sich an frühere Gespräche zu erinnern</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">Ohne Werkzeuge kann ein Modell nur Text erzeugen – beschreiben, was jemand tun
+    sollte. Mit Werkzeugen (suchen, eine Datei lesen, eine E-Mail verschicken, ein System aktualisieren)
+    kann es die Aktion selbst ausführen. Das ist die praktische Grenze zwischen „Chatbot" und „Agent, der
+    Arbeit wirklich erledigt".</p>
+  </div>
+</div>
+<div class="quiz-question" data-i18n="es">
+  <p class="quiz-prompt">¿Por qué importa tanto que un agente pueda usar "herramientas"?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Las herramientas hacen que el texto del modelo suene más natural</button>
+    <button class="quiz-option" data-correct="true">Las herramientas le permiten hacer cosas de verdad, no solo describirlas</button>
+    <button class="quiz-option" data-correct="false">Las herramientas son lo que le permite recordar conversaciones pasadas</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">Sin herramientas, un modelo solo puede producir texto — describir lo que alguien
+    debería hacer. Con herramientas (buscar, leer un archivo, enviar un correo, actualizar un sistema),
+    puede llevar a cabo la acción él mismo. Esa es la línea práctica entre un "chatbot" y un "agente que
+    hace el trabajo de verdad".</p>
+  </div>
+</div>
+
+<div class="recall-card" data-i18n="en">
+  <div class="prompt">In one sentence: what makes a system "agentic" rather than just a chatbot?</div>
+  <div class="hint">Recall from memory first — then click.</div>
+  <div class="answer">
+    It's given a goal and takes a series of self-directed steps — planning, using tools to act, checking
+    its own progress — instead of answering one question and stopping.
+  </div>
+</div>
+<div class="recall-card" data-i18n="de">
+  <div class="prompt">In einem Satz: Was macht ein System „agentisch" statt nur einen Chatbot?</div>
+  <div class="hint">Erst aus dem Gedächtnis abrufen — dann klicken.</div>
+  <div class="answer">
+    Es bekommt ein Ziel und geht selbstständig eine Reihe von Schritten – plant, handelt mit Werkzeugen,
+    prüft den eigenen Fortschritt – statt eine Frage zu beantworten und aufzuhören.
+  </div>
+</div>
+<div class="recall-card" data-i18n="es">
+  <div class="prompt">En una frase: ¿qué hace que un sistema sea "agéntico" y no solo un chatbot?</div>
+  <div class="hint">Recuerda primero de memoria — luego haz clic.</div>
+  <div class="answer">
+    Se le da un objetivo y da una serie de pasos autodirigidos — planifica, actúa con herramientas,
+    comprueba su propio progreso — en lugar de responder una pregunta y detenerse.
+  </div>
+</div>
+
+<div class="teach-back" data-i18n="en">
+  <p class="teach-prompt">A colleague says: "our new AI tool auto-approves refunds now, so I don't need
+  to check them anymore." Using this lesson, what would you actually want to know before trusting that?</p>
+  <textarea class="teach-input" rows="4" placeholder="Write it out before revealing…"></textarea>
+  <button class="teach-reveal">Reveal what a strong answer covers</button>
+  <div class="teach-checklist">
+    <p class="checklist-label">A strong answer hits:</p>
+    <ul>
+      <li>Whether there's a human-in-the-loop step anywhere, or genuinely zero oversight — full autonomy
+      is a much bigger risk than "drafts, then a person approves."</li>
+      <li>What guardrails exist — a spending limit, a rule for what gets auto-approved vs. escalated.</li>
+      <li>Whether "the tool decided" could ever be wrong confidently (hallucination) with real money
+      attached, and what happens when it is.</li>
+      <li>Not taking the claim at face value just because "AI" was mentioned — the same skepticism you'd
+      apply to a new junior colleague making unsupervised decisions.</li>
+    </ul>
+  </div>
+</div>
+<div class="teach-back" data-i18n="de">
+  <p class="teach-prompt">Eine Kollegin sagt: „Unser neues KI-Tool genehmigt Rückerstattungen jetzt
+  automatisch, ich muss die also nicht mehr prüfen." Was würdest du, mit dieser Lektion im Kopf,
+  tatsächlich wissen wollen, bevor du dem vertraust?</p>
+  <textarea class="teach-input" rows="4" placeholder="Erst aufschreiben, dann aufdecken…"></textarea>
+  <button class="teach-reveal">Aufdecken, was eine starke Antwort abdeckt</button>
+  <div class="teach-checklist">
+    <p class="checklist-label">Eine starke Antwort trifft:</p>
+    <ul>
+      <li>Ob es irgendwo einen Schritt „Mensch im Prozess" gibt, oder wirklich null Aufsicht – volle
+      Autonomie ist ein viel größeres Risiko als „entwirft, dann genehmigt eine Person".</li>
+      <li>Welche Leitplanken existieren – ein Ausgabenlimit, eine Regel dafür, was automatisch genehmigt
+      wird und was eskaliert.</li>
+      <li>Ob „das Tool hat entschieden" jemals überzeugt falsch liegen könnte (Halluzination), wenn
+      echtes Geld dranhängt, und was dann passiert.</li>
+      <li>Die Behauptung nicht einfach hinzunehmen, nur weil „KI" gesagt wurde – dieselbe Skepsis, die man
+      bei einer neuen, unbeaufsichtigt entscheidenden Nachwuchskraft hätte.</li>
+    </ul>
+  </div>
+</div>
+<div class="teach-back" data-i18n="es">
+  <p class="teach-prompt">Un compañero dice: "nuestra nueva herramienta de IA ahora aprueba reembolsos
+  automáticamente, así que ya no tengo que revisarlos." Con esta lección en mente, ¿qué querrías saber
+  realmente antes de confiar en eso?</p>
+  <textarea class="teach-input" rows="4" placeholder="Escríbelo antes de revelar…"></textarea>
+  <button class="teach-reveal">Revelar qué cubre una buena respuesta</button>
+  <div class="teach-checklist">
+    <p class="checklist-label">Una buena respuesta incluye:</p>
+    <ul>
+      <li>Si existe en algún punto un paso de "humano en el bucle", o si de verdad no hay ninguna
+      supervisión — la autonomía total es un riesgo mucho mayor que "redacta, y luego una persona
+      aprueba".</li>
+      <li>Qué barreras de seguridad existen — un límite de gasto, una regla sobre qué se aprueba
+      automáticamente y qué se escala.</li>
+      <li>Si "la herramienta decidió" podría alguna vez equivocarse con total confianza (alucinación)
+      cuando hay dinero real de por medio, y qué pasa si ocurre.</li>
+      <li>No aceptar la afirmación sin más solo porque se mencionó "IA" — el mismo escepticismo que se
+      aplicaría a un compañero júnior nuevo tomando decisiones sin supervisión.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="win-box" data-i18n="en">
+  <strong>Your win.</strong> You can now tell an agent from a workflow, spot what's actually driving the
+  "agentic AI" headlines, and ask the one question that matters when someone tells you an AI tool handles
+  something on its own: <em>what's the guardrail, and who checks it?</em>
+</div>
+<div class="win-box" data-i18n="de">
+  <strong>Dein Gewinn.</strong> Du kannst jetzt einen Agenten von einem Workflow unterscheiden, erkennst,
+  was hinter den „Agentic AI"-Schlagzeilen wirklich steckt, und stellst die eine Frage, die zählt, wenn
+  dir jemand erzählt, ein KI-Tool erledige etwas eigenständig: <em>Wo ist die Leitplanke, und wer prüft
+  sie?</em>
+</div>
+<div class="win-box" data-i18n="es">
+  <strong>Tu logro.</strong> Ahora puedes distinguir un agente de un flujo de trabajo, detectar qué hay
+  realmente detrás de los titulares sobre "IA agéntica", y hacer la única pregunta que importa cuando
+  alguien te diga que una herramienta de IA gestiona algo por su cuenta: <em>¿dónde está la barrera de
+  seguridad, y quién la revisa?</em>
+</div>
+
+<div class="primary-source" data-i18n="en">
+  <p class="eyebrow">Primary source</p>
+  <p><a href="https://mitsloan.mit.edu/ideas-made-to-matter/agentic-ai-explained">Agentic AI, explained —
+  MIT Sloan</a>. Short, plain-English, written for business readers rather than engineers — a good ten-
+  minute read to reinforce what's above with more real-world framing.</p>
+</div>
+<div class="primary-source" data-i18n="de">
+  <p class="eyebrow">Primärquelle</p>
+  <p><a href="https://mitsloan.mit.edu/ideas-made-to-matter/agentic-ai-explained">Agentic AI, explained —
+  MIT Sloan</a> (Englisch). Kurz, klar geschrieben, für Wirtschaftsleser statt für Ingenieure – gute zehn
+  Minuten Lektüre, um das oben Gelernte mit mehr Praxisbezug zu vertiefen.</p>
+</div>
+<div class="primary-source" data-i18n="es">
+  <p class="eyebrow">Fuente principal</p>
+  <p><a href="https://mitsloan.mit.edu/ideas-made-to-matter/agentic-ai-explained">Agentic AI, explained —
+  MIT Sloan</a> (en inglés). Breve, en lenguaje claro, escrito para lectores de negocios y no para
+  ingenieros — unos buenos diez minutos de lectura para reforzar lo de arriba con más contexto real.</p>
+</div>
+
+<h2 data-i18n="en">Next</h2>
+<h2 data-i18n="de">Als Nächstes</h2>
+<h2 data-i18n="es">Siguiente</h2>
+
+<p data-i18n="en">Next session: a walk through the full <a href="../reference/glossary.html">glossary</a> at your own
+pace, then — whenever you're ready — a hands-on look at one real tool in action, so these ideas stop being
+abstract.</p>
+<p data-i18n="de">Nächste Sitzung: ein Durchgang durch das vollständige <a href="../reference/glossary.html">Glossar</a>
+in deinem eigenen Tempo, dann – sobald du bereit bist – ein praktischer Blick auf ein echtes Tool in
+Aktion, damit diese Ideen nicht abstrakt bleiben.</p>
+<p data-i18n="es">Próxima sesión: un recorrido por el <a href="../reference/glossary.html">glosario</a> completo a tu
+propio ritmo, y después — cuando estés listo — una mirada práctica a una herramienta real en acción, para
+que estas ideas dejen de ser abstractas.</p>
+
+<div class="ask-agent" data-i18n="en">
+  <strong>Ask your teacher.</strong> Anything unclear, or want a real example worked through? Ask in the
+  session. Good questions to try now: <em>"is the AI feature in [some tool I use] actually agentic, or
+  just a workflow?"</em>, <em>"what would a guardrail look like in [some accounting software]?"</em>, or
+  <em>"what's the actual risk if I let an agent draft emails on my behalf?"</em>
+</div>
+<div class="ask-agent" data-i18n="de">
+  <strong>Frag deine Lehrkraft.</strong> Etwas unklar, oder willst du ein echtes Beispiel durchgehen?
+  Frag einfach in der Sitzung. Gute Fragen zum Ausprobieren: <em>„Ist die KI-Funktion in [ein Tool, das
+  ich nutze] wirklich agentisch, oder nur ein Workflow?"</em>, <em>„Wie würde eine Leitplanke in [eine
+  Buchhaltungssoftware] aussehen?"</em>, oder <em>„Was ist das eigentliche Risiko, wenn ich einen Agenten
+  E-Mails in meinem Namen entwerfen lasse?"</em>
+</div>
+<div class="ask-agent" data-i18n="es">
+  <strong>Pregunta a tu profesor.</strong> ¿Algo no queda claro, o quieres trabajar un ejemplo real?
+  Pregúntalo en la sesión. Buenas preguntas para probar ahora: <em>"¿la función de IA en [alguna
+  herramienta que uso] es realmente agéntica, o solo un flujo de trabajo?"</em>, <em>"¿cómo sería una
+  barrera de seguridad en [algún software de contabilidad]?"</em>, o <em>"¿cuál es el riesgo real de
+  dejar que un agente redacte correos en mi nombre?"</em>
+</div>
+
+<nav class="lesson-links">
+  <a href="../index.html" data-i18n="en">← Index</a>
+  <a href="../index.html" data-i18n="de">← Index</a>
+  <a href="../index.html" data-i18n="es">← Índice</a>
+
+  <a href="../reference/glossary.html" data-i18n="en">Reference: Glossary</a>
+  <a href="../reference/glossary.html" data-i18n="de">Referenz: Glossar</a>
+  <a href="../reference/glossary.html" data-i18n="es">Referencia: Glosario</a>
+
+  <a href="0002-is-this-actually-agentic.html" data-i18n="en">Next: Is This Actually Agentic? →</a>
+  <a href="0002-is-this-actually-agentic.html" data-i18n="de">Weiter: Ist das wirklich agentisch? →</a>
+  <a href="0002-is-this-actually-agentic.html" data-i18n="es">Siguiente: ¿Es esto realmente agéntico? →</a>
+</nav>
+
+</main>
+</body>
+</html>

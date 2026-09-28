@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 0004 — Harness and Sandbox</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/diagram.css">
+<link rel="stylesheet" href="../assets/quiz.css">
+<link rel="stylesheet" href="../assets/lang-switch.css">
+<script src="../assets/quiz.js"></script>
+<script src="../assets/lang-switch.js"></script>
+</head>
+<body>
+
+<div class="lang-switch">
+  <button data-lang="en">EN</button>
+  <button data-lang="de">DE</button>
+  <button data-lang="es">ES</button>
+</div>
+
+<header class="lesson-header">
+  <p class="eyebrow" data-i18n="en">Lesson 0004 · Agentic AI</p>
+  <p class="eyebrow" data-i18n="de">Lektion 0004 · Agentic AI</p>
+  <p class="eyebrow" data-i18n="es">Lección 0004 · Agentic AI</p>
+
+  <h1 data-i18n="en">Harness and Sandbox</h1>
+  <h1 data-i18n="de">Harness und Sandbox</h1>
+  <h1 data-i18n="es">Harness y Sandbox</h1>
+
+  <p class="subtitle" data-i18n="en">Two words for the plumbing you never see — but that decide what an agent can actually touch, and where it's allowed to make mistakes.</p>
+  <p class="subtitle" data-i18n="de">Zwei Wörter für die Technik, die du nie siehst – die aber entscheidet, was ein Agent wirklich anfassen darf und wo er Fehler machen darf.</p>
+  <p class="subtitle" data-i18n="es">Dos palabras para la fontanería que nunca ves — pero que decide qué puede tocar realmente un agente, y dónde se le permite equivocarse.</p>
+</header>
+
+<main>
+
+<div class="mission-tie" data-i18n="en">
+  <strong>Why this now.</strong> Lesson 0003 covered the model's own plumbing — prompt, token, context.
+  This one covers the last piece: the software wrapped around the model, and the safe space it's allowed
+  to work in. Together they explain why two tools that "use the same AI" can feel completely different to
+  trust.
+</div>
+<div class="mission-tie" data-i18n="de">
+  <strong>Warum jetzt.</strong> Lektion 0003 behandelte die Technik des Modells selbst – Prompt, Token,
+  Kontext. Diese hier behandelt das letzte Puzzleteil: die Software rund um das Modell, und den sicheren
+  Raum, in dem es arbeiten darf. Zusammen erklären sie, warum sich zwei Tools, die „dieselbe KI nutzen",
+  völlig unterschiedlich vertrauenswürdig anfühlen können.
+</div>
+<div class="mission-tie" data-i18n="es">
+  <strong>Por qué ahora.</strong> La lección 0003 cubrió la mecánica del propio modelo — prompt, token,
+  contexto. Esta cubre la última pieza: el software que envuelve al modelo, y el espacio seguro en el que
+  se le permite trabajar. Juntas explican por qué dos herramientas que "usan la misma IA" pueden sentirse
+  completamente distintas en cuanto a confianza.
+</div>
+
+<h2 data-i18n="en">Harness: the software around the model</h2>
+<h2 data-i18n="de">Harness: die Software rund um das Modell</h2>
+<h2 data-i18n="es">Harness: el software alrededor del modelo</h2>
+
+<p data-i18n="en">The model itself only does one thing: it reads text and produces text. It has no memory between
+messages on its own, can't open a file, can't send anything. The <strong>harness</strong> is the software
+wrapped around it that turns it into something usable — it manages the back-and-forth loop of think →
+act → check the result → think again, decides what tools it's allowed to use, and decides when to stop
+or ask you. The industry shorthand: <strong>agent = model + harness</strong>.</p>
+<p data-i18n="de">Das Modell selbst tut nur eines: Es liest Text und erzeugt Text. Es hat von sich aus kein
+Gedächtnis zwischen Nachrichten, kann keine Datei öffnen, nichts verschicken. Der <strong>Harness</strong>
+ist die Software drumherum, die daraus etwas Nutzbares macht – sie steuert die wiederholte Schleife aus
+denken → handeln → Ergebnis prüfen → weiterdenken, entscheidet, welche Werkzeuge er nutzen darf, und
+entscheidet, wann Schluss ist oder nachgefragt werden muss. Die Faustformel aus der Branche:
+<strong>Agent = Modell + Harness</strong>.</p>
+<p data-i18n="es">El modelo en sí solo hace una cosa: lee texto y produce texto. No tiene memoria propia entre
+mensajes, no puede abrir un archivo, no puede enviar nada. El <strong>harness</strong> es el software que
+lo envuelve y lo convierte en algo utilizable — gestiona el bucle repetido de pensar → actuar → comprobar
+el resultado → pensar de nuevo, decide qué herramientas puede usar, y decide cuándo parar o preguntarte a
+ti. La fórmula abreviada de la industria: <strong>agente = modelo + harness</strong>.</p>
+
+<p data-i18n="en">This is why comparing AI tools by asking "what model does it use?" tells you less than people
+assume. Two apps can genuinely run on the exact same underlying model and behave completely differently —
+one asks before every action, the other doesn't; one can only draft, the other can send. That difference
+lives entirely in the harness, not the model.</p>
+<p data-i18n="de">Deshalb sagt die Frage „Welches Modell nutzt es?" beim Vergleichen von KI-Tools weniger aus,
+als man denkt. Zwei Apps können tatsächlich auf exakt demselben zugrunde liegenden Modell laufen und sich
+völlig unterschiedlich verhalten – die eine fragt vor jeder Aktion nach, die andere nicht; die eine kann
+nur entwerfen, die andere kann verschicken. Dieser Unterschied steckt vollständig im Harness, nicht im
+Modell.</p>
+<p data-i18n="es">Por eso comparar herramientas de IA preguntando "¿qué modelo usa?" dice menos de lo que la
+gente asume. Dos apps pueden funcionar genuinamente sobre exactamente el mismo modelo subyacente y
+comportarse de forma completamente distinta — una pregunta antes de cada acción, la otra no; una solo
+puede redactar, la otra puede enviar. Esa diferencia vive por completo en el harness, no en el modelo.</p>
+
+<div class="gotcha" data-i18n="en">
+  <strong>The question that actually matters.</strong> Don't ask "which AI model is this built on?" —
+  ask "what can this tool actually do on its own, and what stops it?" That question is about the harness,
+  and it's the one that predicts whether the tool is safe to trust.
+</div>
+<div class="gotcha" data-i18n="de">
+  <strong>Die Frage, die wirklich zählt.</strong> Frag nicht „Auf welchem KI-Modell basiert das?" – frag
+  „Was kann dieses Tool tatsächlich von sich aus tun, und was hält es davon ab?" Diese Frage betrifft den
+  Harness, und sie ist die, die vorhersagt, ob man dem Tool vertrauen kann.
+</div>
+<div class="gotcha" data-i18n="es">
+  <strong>La pregunta que de verdad importa.</strong> No preguntes "¿en qué modelo de IA está construido
+  esto?" — pregunta "¿qué puede hacer esta herramienta realmente por sí sola, y qué lo impide?" Esa
+  pregunta trata sobre el harness, y es la que predice si se puede confiar en la herramienta.
+</div>
+
+<h2 data-i18n="en">Sandbox: the safe space to be wrong in</h2>
+<h2 data-i18n="de">Sandbox: der sichere Raum, um Fehler zu machen</h2>
+<h2 data-i18n="es">Sandbox: el espacio seguro para equivocarse</h2>
+
+<p data-i18n="en">A <strong>sandbox</strong> is a contained, isolated space where an agent is allowed to act,
+walled off from your real files, real money, or real accounts until its work is reviewed. It's the
+practical answer to "what if it gets something wrong": if the mistake happens inside the sandbox, nothing
+outside it gets touched.</p>
+<p data-i18n="de">Eine <strong>Sandbox</strong> ist ein abgeschotteter, isolierter Raum, in dem ein Agent
+handeln darf, abgeschirmt von deinen echten Dateien, echtem Geld oder echten Konten, bis seine Arbeit
+geprüft ist. Sie ist die praktische Antwort auf „was, wenn er etwas falsch macht": Passiert der Fehler
+innerhalb der Sandbox, bleibt alles außerhalb unberührt.</p>
+<p data-i18n="es">Un <strong>sandbox</strong> es un espacio contenido y aislado donde a un agente se le
+permite actuar, separado de tus archivos reales, tu dinero real o tus cuentas reales hasta que su trabajo
+se revise. Es la respuesta práctica a "¿y si se equivoca en algo?": si el error ocurre dentro del
+sandbox, nada fuera de él se ve afectado.</p>
+
+<p data-i18n="en">You'll meet this in practice as a "test mode," "draft mode," or "trial account" a tool offers
+before it connects to anything real. It's worth using deliberately, not skipping: it's the one chance to
+watch a new tool make its mistakes somewhere harmless, before you decide how much access to actually give
+it.</p>
+<p data-i18n="de">In der Praxis begegnet dir das als „Testmodus", „Entwurfsmodus" oder „Testkonto", das ein
+Tool anbietet, bevor es sich mit etwas Echtem verbindet. Es lohnt sich, das bewusst zu nutzen, nicht zu
+überspringen: Es ist die eine Chance, ein neues Tool seine Fehler irgendwo Harmlosem machen zu sehen,
+bevor du entscheidest, wie viel Zugriff du ihm wirklich gibst.</p>
+<p data-i18n="es">En la práctica, te lo encontrarás como un "modo de prueba", "modo borrador" o "cuenta de
+prueba" que una herramienta ofrece antes de conectarse a algo real. Vale la pena usarlo a propósito, no
+saltárselo: es la única oportunidad de ver a una herramienta nueva cometer sus errores en algún sitio
+inofensivo, antes de decidir cuánto acceso darle de verdad.</p>
+
+<p class="citation" data-i18n="en"><a href="https://www.databricks.com/blog/ai-harness">What is an AI
+Agent Harness? — Databricks</a></p>
+<p class="citation" data-i18n="de"><a href="https://www.databricks.com/blog/ai-harness">What is an AI
+Agent Harness? — Databricks</a></p>
+<p class="citation" data-i18n="es"><a href="https://www.databricks.com/blog/ai-harness">What is an AI
+Agent Harness? — Databricks</a></p>
+
+<h2 data-i18n="en">Practice</h2>
+<h2 data-i18n="de">Übung</h2>
+<h2 data-i18n="es">Práctica</h2>
+
+<div class="quiz-question" data-i18n="en">
+  <p class="quiz-prompt">Two apps both advertise "powered by the same AI model." One asks before every
+  action; the other just goes ahead and does things. What explains the difference?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">They must secretly be using different models</button>
+    <button class="quiz-option" data-correct="true">The harness built around the model is different in each app</button>
+    <button class="quiz-option" data-correct="false">It's random — AI behavior varies by chance each time</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">Same model, different harness is completely normal and common. The harness — not
+    the model — decides what the tool is allowed to do on its own and when it has to ask first.</p>
+  </div>
+</div>
+<div class="quiz-question" data-i18n="de">
+  <p class="quiz-prompt">Zwei Apps werben beide mit „basiert auf demselben KI-Modell". Die eine fragt vor
+  jeder Aktion nach; die andere tut einfach etwas. Was erklärt den Unterschied?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Sie müssen heimlich unterschiedliche Modelle nutzen</button>
+    <button class="quiz-option" data-correct="true">Der Harness rund um das Modell ist in jeder App unterschiedlich</button>
+    <button class="quiz-option" data-correct="false">Es ist Zufall — KI-Verhalten variiert jedes Mal zufällig</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">Gleiches Modell, unterschiedlicher Harness ist völlig normal und häufig. Der
+    Harness – nicht das Modell – entscheidet, was das Tool von sich aus tun darf und wann es vorher
+    nachfragen muss.</p>
+  </div>
+</div>
+<div class="quiz-question" data-i18n="es">
+  <p class="quiz-prompt">Dos apps anuncian ambas "impulsado por el mismo modelo de IA". Una pregunta antes
+  de cada acción; la otra simplemente hace las cosas. ¿Qué explica la diferencia?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">En secreto deben estar usando modelos distintos</button>
+    <button class="quiz-option" data-correct="true">El harness construido alrededor del modelo es distinto en cada app</button>
+    <button class="quiz-option" data-correct="false">Es aleatorio — el comportamiento de la IA varía por azar cada vez</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">Mismo modelo, harness distinto es completamente normal y común. El harness — no
+    el modelo — decide qué puede hacer la herramienta por su cuenta y cuándo tiene que preguntar antes.</p>
+  </div>
+</div>
+
+<div class="quiz-question" data-i18n="en">
+  <p class="quiz-prompt">A new AI tool offers a "test mode" before connecting to your real accounts. What
+  should you do?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Skip it — test modes are just marketing, they don't matter</button>
+    <button class="quiz-option" data-correct="false">Avoid the tool entirely — needing a test mode means it's unsafe</button>
+    <button class="quiz-option" data-correct="true">Use it deliberately first, to see how the tool behaves before granting real access</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">A test/sandbox mode is your one free look at how a tool actually behaves — its
+    mistakes are harmless there. Skipping it means your real accounts are the first place it can go
+    wrong.</p>
+  </div>
+</div>
+<div class="quiz-question" data-i18n="de">
+  <p class="quiz-prompt">Ein neues KI-Tool bietet einen „Testmodus" an, bevor es sich mit deinen echten
+  Konten verbindet. Was solltest du tun?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Überspringen — Testmodi sind nur Marketing, sie spielen keine Rolle</button>
+    <button class="quiz-option" data-correct="false">Das Tool ganz meiden — ein nötiger Testmodus bedeutet, es ist unsicher</button>
+    <button class="quiz-option" data-correct="true">Ihn bewusst zuerst nutzen, um zu sehen, wie sich das Tool verhält, bevor echter Zugriff gewährt wird</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">Ein Test-/Sandbox-Modus ist dein einziger kostenloser Blick darauf, wie sich ein
+    Tool tatsächlich verhält – seine Fehler sind dort harmlos. Ihn zu überspringen bedeutet, dass deine
+    echten Konten der erste Ort sind, an dem etwas schiefgehen kann.</p>
+  </div>
+</div>
+<div class="quiz-question" data-i18n="es">
+  <p class="quiz-prompt">Una nueva herramienta de IA ofrece un "modo de prueba" antes de conectarse a tus
+  cuentas reales. ¿Qué deberías hacer?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Saltártelo — los modos de prueba son solo marketing, no importan</button>
+    <button class="quiz-option" data-correct="false">Evitar la herramienta por completo — necesitar un modo de prueba significa que no es segura</button>
+    <button class="quiz-option" data-correct="true">Usarlo a propósito primero, para ver cómo se comporta la herramienta antes de dar acceso real</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">Un modo de prueba/sandbox es tu única mirada gratuita a cómo se comporta realmente
+    una herramienta — sus errores ahí son inofensivos. Saltártelo significa que tus cuentas reales son el
+    primer lugar donde algo puede salir mal.</p>
+  </div>
+</div>
+
+<div class="recall-card" data-i18n="en">
+  <div class="prompt">In one sentence: what's the difference between the model and the harness?</div>
+  <div class="hint">Recall from memory first — then click.</div>
+  <div class="answer">
+    The model is the reasoning engine that turns input into output; the harness is the surrounding
+    software that decides what it's allowed to see, do, and when to stop or ask you.
+  </div>
+</div>
+<div class="recall-card" data-i18n="de">
+  <div class="prompt">In einem Satz: Was ist der Unterschied zwischen Modell und Harness?</div>
+  <div class="hint">Erst aus dem Gedächtnis abrufen — dann klicken.</div>
+  <div class="answer">
+    Das Modell ist die Denk-Engine, die Eingabe in Ausgabe verwandelt; der Harness ist die Software
+    drumherum, die entscheidet, was es sehen und tun darf und wann es aufhören oder nachfragen muss.
+  </div>
+</div>
+<div class="recall-card" data-i18n="es">
+  <div class="prompt">En una frase: ¿cuál es la diferencia entre el modelo y el harness?</div>
+  <div class="hint">Recuerda primero de memoria — luego haz clic.</div>
+  <div class="answer">
+    El modelo es el motor de razonamiento que convierte entrada en salida; el harness es el software que
+    lo rodea y decide qué puede ver, qué puede hacer, y cuándo debe parar o preguntarte.
+  </div>
+</div>
+
+<div class="teach-back" data-i18n="en">
+  <p class="teach-prompt">Two invoice-processing tools both claim to run on "the latest AI model." Using
+  what you now know about harness and sandbox, how would you actually compare them?</p>
+  <textarea class="teach-input" rows="4" placeholder="Write it out before revealing…"></textarea>
+  <button class="teach-reveal">Reveal what a strong answer covers</button>
+  <div class="teach-checklist">
+    <p class="checklist-label">A strong answer hits:</p>
+    <ul>
+      <li>Ignores the "same model" claim as mostly irrelevant on its own.</li>
+      <li>Asks what each tool's harness actually lets it do — post entries, pay, only draft — not just
+      what it describes.</li>
+      <li>Asks about guardrails and approval steps built into each (ties back to Lesson 0002's
+      checklist).</li>
+      <li>Asks whether each offers a sandbox or test mode, and plans to trial both there before
+      connecting real accounts.</li>
+    </ul>
+  </div>
+</div>
+<div class="teach-back" data-i18n="de">
+  <p class="teach-prompt">Zwei Tools zur Rechnungsverarbeitung behaupten beide, auf „dem neuesten
+  KI-Modell" zu laufen. Wie würdest du sie, mit dem Wissen über Harness und Sandbox, tatsächlich
+  vergleichen?</p>
+  <textarea class="teach-input" rows="4" placeholder="Erst aufschreiben, dann aufdecken…"></textarea>
+  <button class="teach-reveal">Aufdecken, was eine starke Antwort abdeckt</button>
+  <div class="teach-checklist">
+    <p class="checklist-label">Eine starke Antwort trifft:</p>
+    <ul>
+      <li>Ignoriert die Behauptung „gleiches Modell" als für sich genommen weitgehend irrelevant.</li>
+      <li>Fragt, was der Harness jedes Tools tatsächlich zulässt – Buchungen eintragen, bezahlen, nur
+      entwerfen – nicht nur, was es beschreibt.</li>
+      <li>Fragt nach Leitplanken und Freigabeschritten in beiden (Anknüpfung an die Checkliste aus
+      Lektion 0002).</li>
+      <li>Fragt, ob beide eine Sandbox oder einen Testmodus anbieten, und plant, beide dort zu testen,
+      bevor echte Konten verbunden werden.</li>
+    </ul>
+  </div>
+</div>
+<div class="teach-back" data-i18n="es">
+  <p class="teach-prompt">Dos herramientas de procesamiento de facturas afirman ambas funcionar con "el
+  último modelo de IA". Con lo que ahora sabes sobre harness y sandbox, ¿cómo las compararías realmente?</p>
+  <textarea class="teach-input" rows="4" placeholder="Escríbelo antes de revelar…"></textarea>
+  <button class="teach-reveal">Revelar qué cubre una buena respuesta</button>
+  <div class="teach-checklist">
+    <p class="checklist-label">Una buena respuesta incluye:</p>
+    <ul>
+      <li>Ignora la afirmación de "mismo modelo" como en gran parte irrelevante por sí sola.</li>
+      <li>Pregunta qué permite realmente hacer el harness de cada herramienta — registrar asientos,
+      pagar, solo redactar — no solo lo que describe.</li>
+      <li>Pregunta por las barreras de seguridad y los pasos de aprobación de cada una (enlaza con la
+      checklist de la Lección 0002).</li>
+      <li>Pregunta si cada una ofrece un sandbox o modo de prueba, y planea probar ambas ahí antes de
+      conectar cuentas reales.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="win-box" data-i18n="en">
+  <strong>Your win.</strong> "Same AI model" claims are marketing noise on their own. You now know the two
+  things that actually decide whether a tool is trustworthy: the harness around it, and whether there's a
+  sandbox to try it in safely first.
+</div>
+<div class="win-box" data-i18n="de">
+  <strong>Dein Gewinn.</strong> Behauptungen wie „gleiches KI-Modell" sind für sich genommen Marketing-
+  Rauschen. Du kennst jetzt die zwei Dinge, die tatsächlich entscheiden, ob ein Tool vertrauenswürdig ist:
+  den Harness drumherum, und ob es eine Sandbox gibt, um es zuerst sicher auszuprobieren.
+</div>
+<div class="win-box" data-i18n="es">
+  <strong>Tu logro.</strong> Las afirmaciones de "mismo modelo de IA" son ruido de marketing por sí solas.
+  Ahora conoces las dos cosas que realmente deciden si una herramienta es de fiar: el harness a su
+  alrededor, y si hay un sandbox para probarla primero de forma segura.
+</div>
+
+<div class="primary-source" data-i18n="en">
+  <p class="eyebrow">Primary source</p>
+  <p><a href="https://www.databricks.com/blog/ai-harness">What is an AI Agent Harness? — Databricks</a>.
+  Plain-English, with the "agent = model + harness" formula and the reason-act-observe loop this lesson
+  is built on.</p>
+</div>
+<div class="primary-source" data-i18n="de">
+  <p class="eyebrow">Primärquelle</p>
+  <p><a href="https://www.databricks.com/blog/ai-harness">What is an AI Agent Harness? — Databricks</a>
+  (Englisch). Klar geschrieben, mit der Formel „Agent = Modell + Harness" und der
+  Denken-Handeln-Beobachten-Schleife, auf der diese Lektion aufbaut.</p>
+</div>
+<div class="primary-source" data-i18n="es">
+  <p class="eyebrow">Fuente principal</p>
+  <p><a href="https://www.databricks.com/blog/ai-harness">What is an AI Agent Harness? — Databricks</a>
+  (en inglés). En lenguaje claro, con la fórmula "agente = modelo + harness" y el bucle de
+  pensar-actuar-observar sobre el que se construye esta lección.</p>
+</div>
+
+<h2 data-i18n="en">Next</h2>
+<h2 data-i18n="de">Als Nächstes</h2>
+<h2 data-i18n="es">Siguiente</h2>
+
+<p data-i18n="en">Next: the last three glossary terms — hallucination, guardrails, autonomy — but from the other
+side. Lesson 0002 taught you to judge someone else's claims about them; the next lesson is about setting
+them yourself, the day you turn on an agentic feature.</p>
+<p data-i18n="de">Als Nächstes: die letzten drei Glossarbegriffe – Halluzination, Leitplanken, Autonomie –
+aber von der anderen Seite. Lektion 0002 hat dich gelehrt, fremde Behauptungen darüber zu beurteilen; die
+nächste Lektion handelt davon, sie selbst festzulegen, an dem Tag, an dem du eine agentische Funktion
+aktivierst.</p>
+<p data-i18n="es">A continuación: los últimos tres términos del glosario — alucinación, barreras de
+seguridad, autonomía — pero desde el otro lado. La lección 0002 te enseñó a juzgar las afirmaciones de
+otros sobre ellos; la siguiente lección trata de fijarlos tú mismo, el día que actives una función
+agéntica.</p>
+
+<div class="ask-agent" data-i18n="en">
+  <strong>Ask your teacher.</strong> Good questions to try now: <em>"what harness does [some tool I use]
+  actually run on?"</em>, <em>"does [some tool] offer a sandbox or test mode?"</em>, or <em>"help me
+  compare two tools by what their harness actually allows, not by which model they mention."</em>
+</div>
+<div class="ask-agent" data-i18n="de">
+  <strong>Frag deine Lehrkraft.</strong> Gute Fragen zum Ausprobieren: <em>„Auf welchem Harness läuft
+  [ein Tool, das ich nutze] eigentlich?"</em>, <em>„Bietet [ein Tool] eine Sandbox oder einen Testmodus
+  an?"</em>, oder <em>„Hilf mir, zwei Tools danach zu vergleichen, was ihr Harness wirklich erlaubt, nicht
+  danach, welches Modell sie erwähnen."</em>
+</div>
+<div class="ask-agent" data-i18n="es">
+  <strong>Pregunta a tu profesor.</strong> Buenas preguntas para probar ahora: <em>"¿en qué harness
+  funciona realmente [alguna herramienta que uso]?"</em>, <em>"¿ofrece [alguna herramienta] un sandbox o
+  modo de prueba?"</em>, o <em>"ayúdame a comparar dos herramientas por lo que su harness realmente
+  permite, no por qué modelo mencionan."</em>
+</div>
+
+<nav class="lesson-links">
+  <a href="0003-prompt-token-context.html" data-i18n="en">← Lesson 0003: Prompt, Token, Context</a>
+  <a href="0003-prompt-token-context.html" data-i18n="de">← Lektion 0003: Prompt, Token, Kontext</a>
+  <a href="0003-prompt-token-context.html" data-i18n="es">← Lección 0003: Prompt, Token, Contexto</a>
+
+  <a href="../reference/glossary.html" data-i18n="en">Reference: Glossary</a>
+  <a href="../reference/glossary.html" data-i18n="de">Referenz: Glossar</a>
+  <a href="../reference/glossary.html" data-i18n="es">Referencia: Glosario</a>
+
+  <a href="../index.html" data-i18n="en">Index</a>
+  <a href="../index.html" data-i18n="de">Index</a>
+  <a href="../index.html" data-i18n="es">Índice</a>
+
+  <a href="0005-your-three-dials.html" data-i18n="en">Next: Your Three Dials →</a>
+  <a href="0005-your-three-dials.html" data-i18n="de">Weiter: Deine drei Regler →</a>
+  <a href="0005-your-three-dials.html" data-i18n="es">Siguiente: Tus tres diales →</a>
+</nav>
+
+</main>
+</body>
+</html>

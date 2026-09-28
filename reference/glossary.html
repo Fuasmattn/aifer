@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference — Agentic AI Glossary</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/lang-switch.css">
+<script src="../assets/lang-switch.js"></script>
+</head>
+<body>
+
+<div class="lang-switch">
+  <button data-lang="en">EN</button>
+  <button data-lang="de">DE</button>
+  <button data-lang="es">ES</button>
+</div>
+
+<header class="lesson-header">
+  <p class="eyebrow" data-i18n="en">Reference · Agentic AI</p>
+  <p class="eyebrow" data-i18n="de">Referenz · Agentic AI</p>
+  <p class="eyebrow" data-i18n="es">Referencia · Agentic AI</p>
+
+  <h1 data-i18n="en">Glossary</h1>
+  <h1 data-i18n="de">Glossar</h1>
+  <h1 data-i18n="es">Glosario</h1>
+
+  <p class="subtitle" data-i18n="en">Every buzzword you'll hit this year, defined once, with one private-life and one work example each. Come back here whenever a term trips you up.</p>
+  <p class="subtitle" data-i18n="de">Jedes Buzzword, das dir dieses Jahr begegnet, einmal erklärt – mit je einem Beispiel aus dem Alltag und dem Berufsleben. Komm hierher zurück, wann immer dich ein Begriff stolpern lässt.</p>
+  <p class="subtitle" data-i18n="es">Cada palabra de moda que te vas a encontrar este año, explicada una vez, con un ejemplo de la vida privada y otro del trabajo. Vuelve aquí siempre que un término te haga tropezar.</p>
+</header>
+
+<main>
+
+<p data-i18n="en">Terms build on each other roughly in this order — read top to bottom once, then use it as a lookup table after that.</p>
+<p data-i18n="de">Die Begriffe bauen ungefähr in dieser Reihenfolge aufeinander auf – einmal von oben nach unten lesen, danach als Nachschlagewerk nutzen.</p>
+<p data-i18n="es">Los términos se apoyan unos en otros, más o menos en este orden — léelo una vez de arriba abajo, y después úsalo como tabla de consulta.</p>
+
+<!-- AI -->
+<div class="glossary-term" data-i18n="en">
+  <h3>AI <span class="also">artificial intelligence</span></h3>
+  <p>The umbrella term for software that performs tasks normally thought to need human judgment —
+  recognizing images, understanding language, spotting patterns. It covers everything from a spam filter
+  to the systems in this glossary. Most of what gets called "AI" today, including everything below, is
+  built on <em>models</em> trained on huge amounts of data rather than explicitly programmed rule by rule.</p>
+</div>
+<div class="glossary-term" data-i18n="de">
+  <h3>KI <span class="also">Künstliche Intelligenz · engl. AI</span></h3>
+  <p>Der Oberbegriff für Software, die Aufgaben übernimmt, für die man eigentlich menschliches
+  Urteilsvermögen braucht – Bilder erkennen, Sprache verstehen, Muster erkennen. Er reicht vom Spamfilter
+  bis zu allen Systemen in diesem Glossar. Das meiste, was heute „KI" genannt wird, einschließlich allem,
+  was unten folgt, basiert auf <em>Modellen</em>, die mit riesigen Datenmengen trainiert wurden, statt
+  Regel für Regel programmiert zu sein.</p>
+</div>
+<div class="glossary-term" data-i18n="es">
+  <h3>IA <span class="also">inteligencia artificial · ingl. AI</span></h3>
+  <p>El término paraguas para software que realiza tareas que normalmente requieren juicio humano —
+  reconocer imágenes, entender lenguaje, detectar patrones. Abarca desde un filtro de spam hasta todos los
+  sistemas de este glosario. La mayor parte de lo que hoy se llama "IA", incluido todo lo que sigue, se
+  basa en <em>modelos</em> entrenados con enormes cantidades de datos, en lugar de estar programado regla
+  por regla.</p>
+</div>
+
+<!-- Model -->
+<div class="glossary-term" data-i18n="en">
+  <h3 id="model-en">Model</h3>
+  <p>The trained "brain" — a large file of learned numbers (parameters) that turns an input into an
+  output. A model on its own does nothing until something sends it input and does something with its
+  output; it has no memory of anything outside the current request.</p>
+  <div class="example"><strong>Example</strong> — "Claude," "GPT," and "Gemini" are model families. When a
+  vendor says their tool "runs on GPT-5" or "runs on Claude," they mean their product is built around that
+  model.</div>
+</div>
+<div class="glossary-term" data-i18n="de">
+  <h3 id="model-de">Modell <span class="also">engl. Model</span></h3>
+  <p>Das trainierte „Gehirn" – eine riesige Datei aus gelernten Zahlen (Parametern), die eine Eingabe in
+  eine Ausgabe verwandelt. Ein Modell allein tut nichts, bis ihm etwas eine Eingabe schickt und etwas mit
+  seiner Ausgabe macht; es hat kein Gedächtnis für irgendetwas außerhalb der aktuellen Anfrage.</p>
+  <div class="example"><strong>Beispiel</strong> — „Claude", „GPT" und „Gemini" sind Modellfamilien. Wenn
+  ein Anbieter sagt, sein Tool „läuft auf GPT-5" oder „läuft auf Claude", meint er damit, dass sein
+  Produkt auf diesem Modell aufbaut.</div>
+</div>
+<div class="glossary-term" data-i18n="es">
+  <h3 id="model-es">Modelo <span class="also">ingl. Model</span></h3>
+  <p>El "cerebro" entrenado — un archivo enorme de números aprendidos (parámetros) que convierte una
+  entrada en una salida. Un modelo por sí solo no hace nada hasta que algo le envía una entrada y hace
+  algo con su salida; no tiene memoria de nada fuera de la petición actual.</p>
+  <div class="example"><strong>Ejemplo</strong> — "Claude", "GPT" y "Gemini" son familias de modelos.
+  Cuando un proveedor dice que su herramienta "funciona con GPT-5" o "funciona con Claude", quiere decir
+  que su producto está construido sobre ese modelo.</div>
+</div>
+
+<!-- LLM -->
+<div class="glossary-term" data-i18n="en">
+  <h3>LLM <span class="also">large language model</span></h3>
+  <p>A model trained specifically on text, built to predict the next chunk of text given what came before.
+  That simple mechanism, at large enough scale, turns out to produce fluent writing, summarizing,
+  translating, and reasoning-like behavior. Claude, ChatGPT, and Gemini are all products built around an
+  LLM.</p>
+  <div class="example"><strong>Example</strong> — Asking ChatGPT to draft a birthday message, or asking a
+  finance copilot to summarize a long email thread, both run on an LLM under the hood.</div>
+</div>
+<div class="glossary-term" data-i18n="de">
+  <h3>LLM <span class="also">großes Sprachmodell</span></h3>
+  <p>Ein Modell, das speziell auf Text trainiert wurde, um den nächsten Textabschnitt vorherzusagen,
+  ausgehend davon, was vorher kam. Dieser einfache Mechanismus erzeugt, in ausreichend großem Maßstab,
+  flüssiges Schreiben, Zusammenfassen, Übersetzen und Verhalten, das wie Schlussfolgern wirkt. Claude,
+  ChatGPT und Gemini sind alles Produkte, die auf einem LLM aufbauen.</p>
+  <div class="example"><strong>Beispiel</strong> — Ob man ChatGPT bittet, eine Geburtstagsnachricht zu
+  entwerfen, oder einen Finanz-Copiloten, eine lange E-Mail-Kette zusammenzufassen – beides läuft im
+  Hintergrund auf einem LLM.</div>
+</div>
+<div class="glossary-term" data-i18n="es">
+  <h3>LLM <span class="also">modelo de lenguaje grande</span></h3>
+  <p>Un modelo entrenado específicamente con texto, diseñado para predecir el siguiente fragmento de texto
+  a partir de lo que vino antes. Ese mecanismo tan simple, a suficiente escala, termina produciendo
+  escritura fluida, resúmenes, traducciones y un comportamiento parecido al razonamiento. Claude, ChatGPT
+  y Gemini son todos productos construidos alrededor de un LLM.</p>
+  <div class="example"><strong>Ejemplo</strong> — Pedirle a ChatGPT que redacte un mensaje de cumpleaños, o
+  pedirle a un copiloto financiero que resuma un hilo de correo largo, ambos funcionan con un LLM por
+  debajo.</div>
+</div>
+
+<!-- Prompt -->
+<div class="glossary-term" data-i18n="en">
+  <h3>Prompt</h3>
+  <p>The text (and sometimes images or files) you send the model — your question, instruction, or task.
+  Quality of the prompt strongly shapes quality of the answer: vague in, vague out.</p>
+  <div class="example"><strong>Example</strong> — "Summarize this in three bullet points for a client
+  email" is a sharper prompt than "summarize this," and will reliably produce a more useful answer.</div>
+</div>
+<div class="glossary-term" data-i18n="de">
+  <h3>Prompt</h3>
+  <p>Der Text (und manchmal Bilder oder Dateien), den du dem Modell schickst – deine Frage, Anweisung oder
+  Aufgabe. Die Qualität des Prompts prägt stark die Qualität der Antwort: vage rein, vage raus.</p>
+  <div class="example"><strong>Beispiel</strong> — „Fasse das in drei Stichpunkten für eine Kunden-E-Mail
+  zusammen" ist ein schärferer Prompt als „fasse das zusammen" und liefert zuverlässig eine nützlichere
+  Antwort.</div>
+</div>
+<div class="glossary-term" data-i18n="es">
+  <h3>Prompt</h3>
+  <p>El texto (y a veces imágenes o archivos) que le envías al modelo — tu pregunta, instrucción o tarea.
+  La calidad del prompt determina en gran medida la calidad de la respuesta: si entra vago, sale vago.</p>
+  <div class="example"><strong>Ejemplo</strong> — "Resume esto en tres puntos para un correo a un cliente"
+  es un prompt más preciso que "resume esto", y producirá de forma fiable una respuesta más útil.</div>
+</div>
+
+<!-- Token -->
+<div class="glossary-term" data-i18n="en">
+  <h3>Token <span class="also">input / output</span></h3>
+  <p>The unit the model actually reads and writes — roughly three-quarters of a word in English (so
+  "unhappiness" might split into two or three tokens). <em>Input tokens</em> are everything you send in;
+  <em>output tokens</em> are everything it generates back. This matters practically because usage-based AI
+  pricing is almost always billed per token, input and output counted separately.</p>
+  <div class="example"><strong>Example</strong> — Pasting a 10-page contract in as context and asking for
+  a one-paragraph summary uses many input tokens and very few output tokens — and most tools charge more
+  for the input side of that.</div>
+</div>
+<div class="glossary-term" data-i18n="de">
+  <h3>Token <span class="also">Eingabe / Ausgabe</span></h3>
+  <p>Die Einheit, die das Modell tatsächlich liest und schreibt – etwa drei Viertel eines Wortes im
+  Englischen (so kann „unhappiness" in zwei oder drei Tokens zerfallen). <em>Input-Tokens</em> sind alles,
+  was du hineinschickst; <em>Output-Tokens</em> sind alles, was zurückkommt. Das ist praktisch relevant,
+  weil nutzungsbasierte KI-Preise fast immer pro Token abgerechnet werden, Eingabe und Ausgabe getrennt
+  gezählt.</p>
+  <div class="example"><strong>Beispiel</strong> — Einen zehnseitigen Vertrag als Kontext einzufügen und
+  um eine Ein-Absatz-Zusammenfassung zu bitten, verbraucht viele Input-Tokens und sehr wenige
+  Output-Tokens – und die meisten Tools berechnen die Eingabeseite teurer.</div>
+</div>
+<div class="glossary-term" data-i18n="es">
+  <h3>Token <span class="also">entrada / salida</span></h3>
+  <p>La unidad que el modelo realmente lee y escribe — aproximadamente tres cuartas partes de una palabra
+  en inglés (así que "unhappiness" puede dividirse en dos o tres tokens). Los <em>tokens de entrada</em>
+  son todo lo que envías; los <em>tokens de salida</em> son todo lo que se genera de vuelta. Esto importa
+  en la práctica porque los precios de IA por uso casi siempre se cobran por token, contando entrada y
+  salida por separado.</p>
+  <div class="example"><strong>Ejemplo</strong> — Pegar un contrato de 10 páginas como contexto y pedir un
+  resumen de un párrafo usa muchos tokens de entrada y muy pocos de salida — y la mayoría de herramientas
+  cobra más por el lado de la entrada.</div>
+</div>
+
+<!-- Context -->
+<div class="glossary-term" data-i18n="en">
+  <h3>Context <span class="also">and context window</span></h3>
+  <p><em>Context</em> is everything the model can currently "see": your prompt, any documents you attached,
+  the conversation so far. The <em>context window</em> is the hard size limit on that, measured in tokens —
+  effectively the model's short-term working memory for this one conversation. Go past the limit and the
+  oldest material starts falling out of view; the model doesn't remember it was ever there.</p>
+  <div class="example"><strong>Example</strong> — In a very long back-and-forth with an AI assistant, it
+  starts "forgetting" something you said at the start — that's the context window filling up, not the
+  model getting worse.</div>
+</div>
+<div class="glossary-term" data-i18n="de">
+  <h3>Kontext <span class="also">und Kontextfenster</span></h3>
+  <p><em>Kontext</em> ist alles, was das Modell gerade „sehen" kann: dein Prompt, alle angehängten
+  Dokumente, das bisherige Gespräch. Das <em>Kontextfenster</em> ist die harte Größengrenze dafür,
+  gemessen in Tokens – praktisch das Kurzzeitgedächtnis des Modells für genau dieses eine Gespräch.
+  Überschreitet man die Grenze, fällt das älteste Material aus dem Blickfeld; das Modell erinnert sich
+  nicht mehr daran, dass es je da war.</p>
+  <div class="example"><strong>Beispiel</strong> — In einem sehr langen Hin und Her mit einem
+  KI-Assistenten „vergisst" er plötzlich etwas, das du am Anfang gesagt hast – das ist das volllaufende
+  Kontextfenster, nicht ein schlechter werdendes Modell.</div>
+</div>
+<div class="glossary-term" data-i18n="es">
+  <h3>Contexto <span class="also">y ventana de contexto</span></h3>
+  <p>El <em>contexto</em> es todo lo que el modelo puede "ver" en ese momento: tu prompt, cualquier
+  documento adjunto, la conversación hasta ahora. La <em>ventana de contexto</em> es el límite de tamaño
+  fijo para eso, medido en tokens — en la práctica, la memoria de trabajo a corto plazo del modelo para
+  esa conversación concreta. Si se supera el límite, el material más antiguo empieza a desaparecer de la
+  vista; el modelo no recuerda que existió.</p>
+  <div class="example"><strong>Ejemplo</strong> — En una conversación muy larga con un asistente de IA,
+  empieza a "olvidar" algo que dijiste al principio — eso es la ventana de contexto llenándose, no que el
+  modelo empeore.</div>
+</div>
+
+<!-- Hallucination -->
+<div class="glossary-term" data-i18n="en">
+  <h3>Hallucination</h3>
+  <p>When a model states something false with total confidence and no signal that it's guessing. It isn't
+  lying — it's producing plausible-sounding text, and plausible isn't the same as true. This is the single
+  most important limitation to internalize before trusting AI output for anything that matters.</p>
+  <div class="example"><strong>Example</strong> — An assistant confidently cites a tax threshold or a
+  regulation clause that turns out not to exist, or misstates one that does. Always verify anything
+  numeric, legal, or load-bearing against a real source.</div>
+</div>
+<div class="glossary-term" data-i18n="de">
+  <h3>Halluzination</h3>
+  <p>Wenn ein Modell etwas Falsches mit völliger Überzeugung behauptet, ohne jedes Anzeichen, dass es rät.
+  Es lügt nicht – es erzeugt plausibel klingenden Text, und plausibel ist nicht dasselbe wie wahr. Das ist
+  die wichtigste Einschränkung, die man verinnerlichen sollte, bevor man KI-Ausgaben für irgendetwas
+  Wichtiges vertraut.</p>
+  <div class="example"><strong>Beispiel</strong> — Ein Assistent zitiert überzeugt einen Steuerfreibetrag
+  oder eine Vorschrift, die es so gar nicht gibt, oder gibt eine echte falsch wieder. Alles Zahlenbasierte,
+  Rechtliche oder Folgenreiche immer gegen eine echte Quelle prüfen.</div>
+</div>
+<div class="glossary-term" data-i18n="es">
+  <h3>Alucinación</h3>
+  <p>Cuando un modelo afirma algo falso con total confianza y sin ninguna señal de que está adivinando. No
+  está mintiendo — está produciendo texto que suena plausible, y plausible no es lo mismo que verdadero.
+  Esta es la limitación más importante que hay que interiorizar antes de confiar en la salida de una IA
+  para algo que importa.</p>
+  <div class="example"><strong>Ejemplo</strong> — Un asistente cita con total seguridad un umbral fiscal o
+  una cláusula normativa que resulta no existir, o cita mal una que sí existe. Verifica siempre cualquier
+  dato numérico, legal o con consecuencias reales contra una fuente real.</div>
+</div>
+
+<!-- Agent -->
+<div class="glossary-term" data-i18n="en">
+  <h3>Agent</h3>
+  <p>A system built around a model that can take multiple steps toward a goal on its own — not just answer
+  one question, but decide what to do next, use tools, check the result, and continue — instead of a human
+  deciding each individual step. Anthropic's own framing: an agent is what you get when the model
+  "directs its own process," as opposed to a fixed, human-scripted sequence (that fixed kind is called a
+  <em>workflow</em> — see below).</p>
+  <div class="example"><strong>Example</strong> — Ask a regular assistant "what's the total of these
+  invoices?" and it answers once. Ask an agent to "reconcile this month's invoices against the bank
+  statement and flag anything that doesn't match," and it works through the whole task in steps, checking
+  its own progress along the way.</div>
+</div>
+<div class="glossary-term" data-i18n="de">
+  <h3>Agent</h3>
+  <p>Ein System rund um ein Modell, das mehrere Schritte auf ein Ziel hin selbstständig geht – nicht nur
+  eine Frage beantwortet, sondern entscheidet, was als Nächstes zu tun ist, Werkzeuge nutzt, das Ergebnis
+  prüft und weitermacht – statt dass ein Mensch jeden einzelnen Schritt vorgibt. Anthropics eigene
+  Definition: Ein Agent liegt vor, wenn das Modell „seinen eigenen Prozess steuert", im Gegensatz zu einer
+  festen, von Menschen vorgeschriebenen Abfolge (diese feste Art heißt <em>Workflow</em> – siehe unten).</p>
+  <div class="example"><strong>Beispiel</strong> — Fragt man einen normalen Assistenten „wie hoch ist die
+  Summe dieser Rechnungen?", antwortet er einmal. Bittet man einen Agenten, „die Rechnungen dieses Monats
+  mit dem Kontoauszug abzugleichen und alles zu melden, was nicht passt", arbeitet er die ganze Aufgabe in
+  Schritten ab und prüft dabei laufend seinen eigenen Fortschritt.</div>
+</div>
+<div class="glossary-term" data-i18n="es">
+  <h3>Agente</h3>
+  <p>Un sistema construido alrededor de un modelo que puede dar varios pasos hacia un objetivo por su
+  cuenta — no solo responder una pregunta, sino decidir qué hacer a continuación, usar herramientas,
+  comprobar el resultado y continuar — en lugar de que una persona decida cada paso individual. La propia
+  definición de Anthropic: un agente es lo que se obtiene cuando el modelo "dirige su propio proceso", a
+  diferencia de una secuencia fija escrita por humanos (ese tipo fijo se llama <em>flujo de trabajo</em> —
+  ver más abajo).</p>
+  <div class="example"><strong>Ejemplo</strong> — Pregúntale a un asistente normal "¿cuál es el total de
+  estas facturas?" y responderá una vez. Pídele a un agente que "concilie las facturas de este mes con el
+  extracto bancario y marque cualquier cosa que no cuadre", y trabajará toda la tarea en pasos,
+  comprobando su propio progreso por el camino.</div>
+</div>
+
+<!-- Agentic -->
+<div class="glossary-term" data-i18n="en">
+  <h3>Agentic <span class="also">/ agentic AI</span></h3>
+  <p>The adjective for how much a system behaves like the <em>agent</em> above: acting toward a
+  goal on its own initiative, adapting when things don't go as expected, rather than waiting for step-by-
+  step instructions. It's a spectrum, not a switch — a tool can be "a bit agentic" (it drafts a reply and
+  waits for you to send it) or "very agentic" (it drafts, sends, and follows up, on its own).</p>
+  <div class="example"><strong>Example</strong> — A calendar app that just shows your meetings is not
+  agentic. One that notices a conflict, proposes three new times, and rebooks it once you say "yes" is.</div>
+</div>
+<div class="glossary-term" data-i18n="de">
+  <h3>Agentisch <span class="also">/ agentische KI</span></h3>
+  <p>Das Adjektiv dafür, wie sehr ein System sich wie der oben beschriebene <em>Agent</em> verhält: aus
+  eigenem Antrieb auf ein Ziel hinarbeiten, sich anpassen, wenn etwas nicht wie erwartet läuft, statt auf
+  Schritt-für-Schritt-Anweisungen zu warten. Es ist eine Skala, kein Schalter – ein Tool kann „ein bisschen
+  agentisch" sein (es entwirft eine Antwort und wartet, dass du sie abschickst) oder „sehr agentisch"
+  (es entwirft, verschickt und hakt von selbst nach).</p>
+  <div class="example"><strong>Beispiel</strong> — Eine Kalender-App, die nur deine Termine anzeigt, ist
+  nicht agentisch. Eine, die einen Konflikt bemerkt, drei neue Zeiten vorschlägt und den Termin
+  verschiebt, sobald du „ja" sagst, ist es.</div>
+</div>
+<div class="glossary-term" data-i18n="es">
+  <h3>Agéntico <span class="also">/ IA agéntica</span></h3>
+  <p>El adjetivo para cuánto se comporta un sistema como el <em>agente</em> de arriba: actuar hacia un
+  objetivo por iniciativa propia, adaptarse cuando las cosas no salen como se esperaba, en vez de esperar
+  instrucciones paso a paso. Es un espectro, no un interruptor — una herramienta puede ser "un poco
+  agéntica" (redacta una respuesta y espera a que tú la envíes) o "muy agéntica" (redacta, envía y hace
+  seguimiento por su cuenta).</p>
+  <div class="example"><strong>Ejemplo</strong> — Una app de calendario que solo muestra tus reuniones no
+  es agéntica. Una que detecta un conflicto, propone tres horarios nuevos y reagenda en cuanto dices "sí",
+  sí lo es.</div>
+</div>
+
+<!-- Workflow -->
+<div class="glossary-term" data-i18n="en">
+  <h3 id="workflow-en">Workflow <span class="also">vs. agent</span></h3>
+  <p>A fixed, predetermined sequence of steps — "do A, then B, then C" — that may use AI at each step but
+  doesn't let the AI decide the order or skip/add steps. Most "AI features" bolted onto existing software
+  today are workflows, not agents; true agents are rarer and more powerful, but also less predictable.</p>
+  <div class="example"><strong>Example</strong> — A tool that always extracts data from a receipt, then
+  always categorizes it, then always files it, in that fixed order, is a workflow. A tool that decides
+  <em>whether</em> a receipt needs human review at all, based on what it finds, is acting as an agent.</div>
+</div>
+<div class="glossary-term" data-i18n="de">
+  <h3 id="workflow-de">Workflow <span class="also">vs. Agent</span></h3>
+  <p>Eine feste, vorab festgelegte Abfolge von Schritten – „mache A, dann B, dann C" –, die bei jedem
+  Schritt KI nutzen kann, der KI aber nicht erlaubt, die Reihenfolge zu ändern oder Schritte
+  auszulassen/hinzuzufügen. Die meisten „KI-Funktionen", die heute an bestehende Software angeflanscht
+  werden, sind Workflows, keine Agenten; echte Agenten sind seltener und mächtiger, aber auch weniger
+  vorhersehbar.</p>
+  <div class="example"><strong>Beispiel</strong> — Ein Tool, das aus einem Beleg immer Daten extrahiert,
+  sie dann immer kategorisiert und dann immer ablegt, genau in dieser festen Reihenfolge, ist ein
+  Workflow. Ein Tool, das anhand dessen, was es findet, selbst entscheidet, <em>ob</em> ein Beleg
+  überhaupt menschliche Prüfung braucht, handelt wie ein Agent.</div>
+</div>
+<div class="glossary-term" data-i18n="es">
+  <h3 id="workflow-es">Flujo de trabajo <span class="also">vs. agente</span></h3>
+  <p>Una secuencia fija y predeterminada de pasos — "haz A, luego B, luego C" — que puede usar IA en cada
+  paso pero no deja que la IA decida el orden ni añada u omita pasos. La mayoría de las "funciones de IA"
+  añadidas hoy a software existente son flujos de trabajo, no agentes; los agentes de verdad son más
+  raros y más potentes, pero también menos predecibles.</p>
+  <div class="example"><strong>Ejemplo</strong> — Una herramienta que siempre extrae datos de un recibo,
+  luego siempre lo categoriza y luego siempre lo archiva, en ese orden fijo, es un flujo de trabajo. Una
+  herramienta que decide <em>si</em> un recibo necesita revisión humana según lo que encuentra, está
+  actuando como un agente.</div>
+</div>
+
+<!-- Tool use -->
+<div class="glossary-term" data-i18n="en">
+  <h3>Tool use <span class="also">/ tool calling</span></h3>
+  <p>An agent's ability to actually do things outside of just generating text — search the web, run a
+  calculation, read a file, send an email, update a spreadsheet. Without tools, a model can only talk; with
+  tools, it can act. This is the practical difference between a chatbot and an agent that gets real work
+  done.</p>
+  <div class="example"><strong>Example</strong> — An agent that can query your accounting software's
+  database and post a correcting journal entry is using tools; one that can only describe what entry you
+  should post yourself is not.</div>
+</div>
+<div class="glossary-term" data-i18n="de">
+  <h3>Tool-Nutzung <span class="also">/ Tool-Aufruf</span></h3>
+  <p>Die Fähigkeit eines Agenten, tatsächlich etwas zu tun, statt nur Text zu erzeugen – im Web suchen,
+  eine Berechnung durchführen, eine Datei lesen, eine E-Mail verschicken, eine Tabelle aktualisieren. Ohne
+  Tools kann ein Modell nur reden; mit Tools kann es handeln. Das ist der praktische Unterschied zwischen
+  einem Chatbot und einem Agenten, der echte Arbeit erledigt.</p>
+  <div class="example"><strong>Beispiel</strong> — Ein Agent, der die Datenbank deiner Buchhaltungssoftware
+  abfragen und eine korrigierende Buchung eintragen kann, nutzt Tools; einer, der nur beschreiben kann,
+  welche Buchung du selbst eintragen solltest, tut das nicht.</div>
+</div>
+<div class="glossary-term" data-i18n="es">
+  <h3>Uso de herramientas <span class="also">/ llamadas a herramientas</span></h3>
+  <p>La capacidad de un agente de realmente hacer cosas más allá de generar texto — buscar en la web,
+  hacer un cálculo, leer un archivo, enviar un correo, actualizar una hoja de cálculo. Sin herramientas,
+  un modelo solo puede hablar; con herramientas, puede actuar. Esta es la diferencia práctica entre un
+  chatbot y un agente que hace trabajo real.</p>
+  <div class="example"><strong>Ejemplo</strong> — Un agente que puede consultar la base de datos de tu
+  software de contabilidad y registrar un asiento corrector está usando herramientas; uno que solo puede
+  describir qué asiento deberías registrar tú mismo, no lo está.</div>
+</div>
+
+<!-- Harness -->
+<div class="glossary-term" data-i18n="en">
+  <h3>Harness</h3>
+  <p>The software wrapped around a model that turns it into a working agent: it manages the back-and-forth
+  loop of think → act → check the result → think again, keeps track of what's happened so far, and decides
+  when to stop or ask a human. A rough shorthand used in the industry: <em>agent = model + harness</em>.
+  You'll rarely need this word directly, but it explains why two products built on the exact same
+  underlying model can behave very differently — the harness around it is doing a lot of the work.</p>
+  <div class="example"><strong>Example</strong> — Two different "AI coding assistants" can both run on the
+  same underlying model yet feel completely different to use — because each has built a different harness
+  around it.</div>
+</div>
+<div class="glossary-term" data-i18n="de">
+  <h3>Harness <span class="also">engl., kein deutscher Standardbegriff</span></h3>
+  <p>Die Software, die ein Modell umgibt und daraus einen funktionierenden Agenten macht: Sie steuert die
+  wiederholte Schleife aus denken → handeln → Ergebnis prüfen → weiterdenken, behält den Überblick über
+  das bisher Geschehene und entscheidet, wann Schluss ist oder ein Mensch gefragt werden muss. Eine grobe
+  Faustformel aus der Branche: <em>Agent = Modell + Harness</em>. Du wirst dieses Wort selten direkt
+  brauchen, aber es erklärt, warum zwei Produkte auf exakt demselben zugrunde liegenden Modell sich völlig
+  unterschiedlich anfühlen können – der Harness drumherum leistet einen großen Teil der Arbeit.</p>
+  <div class="example"><strong>Beispiel</strong> — Zwei verschiedene „KI-Coding-Assistenten" können auf
+  demselben Modell laufen und sich trotzdem völlig unterschiedlich anfühlen – weil jeder einen anderen
+  Harness drumherum gebaut hat.</div>
+</div>
+<div class="glossary-term" data-i18n="es">
+  <h3>Harness <span class="also">ingl., sin término estándar en español</span></h3>
+  <p>El software que envuelve a un modelo y lo convierte en un agente funcional: gestiona el bucle
+  repetido de pensar → actuar → comprobar el resultado → pensar de nuevo, lleva la cuenta de lo ocurrido
+  hasta ahora y decide cuándo parar o preguntar a un humano. Una fórmula aproximada usada en la industria:
+  <em>agente = modelo + harness</em>. Rara vez necesitarás esta palabra directamente, pero explica por qué
+  dos productos construidos sobre exactamente el mismo modelo pueden comportarse de forma muy distinta —
+  el harness a su alrededor hace gran parte del trabajo.</p>
+  <div class="example"><strong>Ejemplo</strong> — Dos "asistentes de programación con IA" distintos pueden
+  funcionar sobre el mismo modelo y aun así sentirse completamente diferentes de usar — porque cada uno
+  ha construido un harness distinto a su alrededor.</div>
+</div>
+
+<!-- Sandbox -->
+<div class="glossary-term" data-i18n="en">
+  <h3>Sandbox</h3>
+  <p>A contained, isolated space where an agent is allowed to act, walled off from your real files, real
+  money, or real systems until its work is reviewed. It's a safety mechanism: if the agent does something
+  wrong inside the sandbox, nothing outside it gets touched.</p>
+  <div class="example"><strong>Example</strong> — An agent asked to "clean up this spreadsheet" that works
+  on a copy first, rather than editing the original in place, is effectively working in a sandbox.</div>
+</div>
+<div class="glossary-term" data-i18n="de">
+  <h3>Sandbox</h3>
+  <p>Ein abgeschotteter, isolierter Raum, in dem ein Agent handeln darf, abgeschirmt von deinen echten
+  Dateien, echtem Geld oder echten Systemen, bis seine Arbeit geprüft ist. Es ist ein
+  Sicherheitsmechanismus: Wenn der Agent innerhalb der Sandbox etwas falsch macht, bleibt alles außerhalb
+  unberührt.</p>
+  <div class="example"><strong>Beispiel</strong> — Ein Agent, der gebeten wird, „diese Tabelle
+  aufzuräumen", und dafür zuerst an einer Kopie arbeitet statt am Original, arbeitet faktisch in einer
+  Sandbox.</div>
+</div>
+<div class="glossary-term" data-i18n="es">
+  <h3>Sandbox <span class="also">entorno aislado</span></h3>
+  <p>Un espacio contenido y aislado donde a un agente se le permite actuar, separado de tus archivos
+  reales, tu dinero real o tus sistemas reales hasta que su trabajo se revise. Es un mecanismo de
+  seguridad: si el agente hace algo mal dentro del sandbox, nada fuera de él se ve afectado.</p>
+  <div class="example"><strong>Ejemplo</strong> — Un agente al que se le pide "ordena esta hoja de
+  cálculo" y que primero trabaja sobre una copia en lugar de editar el original, está efectivamente
+  trabajando en un sandbox.</div>
+</div>
+
+<!-- Guardrails -->
+<div class="glossary-term" data-i18n="en">
+  <h3>Guardrails <span class="also">/ human in the loop</span></h3>
+  <p>The rules and checkpoints that keep an agent from taking a wrong or risky action on its own —
+  spending limits, "ask before sending," restricted access to sensitive systems, or a required human
+  approval before anything final happens. "Human in the loop" specifically means a person must review or
+  approve before the agent's action takes effect.</p>
+  <div class="example"><strong>Example</strong> — An agent that can draft a payment but requires a
+  finance manager's sign-off before it actually goes out has a guardrail (human in the loop) around the
+  one step that matters most.</div>
+</div>
+<div class="glossary-term" data-i18n="de">
+  <h3>Leitplanken <span class="also">/ Mensch im Prozess (human in the loop)</span></h3>
+  <p>Die Regeln und Kontrollpunkte, die einen Agenten davon abhalten, eigenmächtig eine falsche oder
+  riskante Aktion auszuführen – Ausgabenlimits, „vor dem Versenden nachfragen", eingeschränkter Zugriff auf
+  sensible Systeme oder eine zwingende menschliche Freigabe, bevor etwas Endgültiges passiert. „Mensch im
+  Prozess" (human in the loop) bedeutet konkret: Eine Person muss prüfen oder freigeben, bevor die Aktion
+  des Agenten wirksam wird.</p>
+  <div class="example"><strong>Beispiel</strong> — Ein Agent, der eine Zahlung vorbereiten kann, aber vor
+  dem tatsächlichen Versand die Freigabe eines Finanzverantwortlichen braucht, hat genau an der
+  wichtigsten Stelle eine Leitplanke (Mensch im Prozess).</div>
+</div>
+<div class="glossary-term" data-i18n="es">
+  <h3>Barreras de seguridad <span class="also">/ humano en el bucle (human in the loop)</span></h3>
+  <p>Las reglas y puntos de control que impiden que un agente tome una acción equivocada o arriesgada por
+  su cuenta — límites de gasto, "preguntar antes de enviar", acceso restringido a sistemas sensibles, o
+  una aprobación humana obligatoria antes de que algo se vuelva definitivo. "Humano en el bucle" significa
+  concretamente que una persona debe revisar o aprobar antes de que la acción del agente surta efecto.</p>
+  <div class="example"><strong>Ejemplo</strong> — Un agente que puede preparar un pago pero necesita el
+  visto bueno de un responsable financiero antes de que se envíe de verdad, tiene una barrera de
+  seguridad (humano en el bucle) justo en el paso que más importa.</div>
+</div>
+
+<!-- Autonomy -->
+<div class="glossary-term" data-i18n="en">
+  <h3>Autonomy</h3>
+  <p>How much an agent is left to decide and act without checking in — low autonomy means it asks before
+  almost every step; high autonomy means it runs long stretches of work unsupervised. More autonomy means
+  more speed and less friction, but also more room for a mistake to go uncaught before anyone notices.</p>
+  <div class="example"><strong>Example</strong> — An assistant that emails you a draft for approval is
+  low-autonomy; one that emails the client directly and only reports back afterward is high-autonomy —
+  the right setting depends entirely on how much the mistake would cost if it got it wrong.</div>
+</div>
+<div class="glossary-term" data-i18n="de">
+  <h3>Autonomie</h3>
+  <p>Wie viel Entscheidungs- und Handlungsspielraum ein Agent ohne Rückfrage bekommt – niedrige Autonomie
+  bedeutet, er fragt vor fast jedem Schritt nach; hohe Autonomie bedeutet, er arbeitet lange Strecken
+  unbeaufsichtigt. Mehr Autonomie bedeutet mehr Tempo und weniger Reibung, aber auch mehr Spielraum dafür,
+  dass ein Fehler unbemerkt bleibt, bevor ihn jemand entdeckt.</p>
+  <div class="example"><strong>Beispiel</strong> — Ein Assistent, der dir einen Entwurf zur Freigabe
+  mailt, hat niedrige Autonomie; einer, der direkt an den Kunden mailt und erst danach Bericht erstattet,
+  hat hohe Autonomie – die richtige Einstellung hängt ganz davon ab, wie teuer ein Fehler an dieser
+  Stelle wäre.</div>
+</div>
+<div class="glossary-term" data-i18n="es">
+  <h3>Autonomía</h3>
+  <p>Cuánto margen tiene un agente para decidir y actuar sin consultar — poca autonomía significa que
+  pregunta antes de casi cada paso; mucha autonomía significa que trabaja largos tramos sin supervisión.
+  Más autonomía significa más velocidad y menos fricción, pero también más margen para que un error pase
+  desapercibido antes de que alguien lo note.</p>
+  <div class="example"><strong>Ejemplo</strong> — Un asistente que te envía un borrador por correo para
+  aprobarlo tiene poca autonomía; uno que escribe directamente al cliente y solo informa después tiene
+  mucha autonomía — el ajuste correcto depende por completo de cuánto costaría el error si algo sale
+  mal.</div>
+</div>
+
+<p class="citation" data-i18n="en">Definitions cross-checked against <a href="https://www.anthropic.com/engineering/building-effective-agents">Anthropic's "Building Effective Agents"</a>,
+<a href="https://mitsloan.mit.edu/ideas-made-to-matter/agentic-ai-explained">MIT Sloan's "Agentic AI, explained"</a>,
+<a href="https://www.ibm.com/think/topics/agentic-ai">IBM's "What is Agentic AI?"</a>, and
+<a href="https://www.databricks.com/blog/ai-harness">Databricks' "What is an AI Agent Harness?"</a> —
+see <a href="../RESOURCES.md">RESOURCES.md</a> for the full annotated list.</p>
+<p class="citation" data-i18n="de">Definitionen abgeglichen mit <a href="https://www.anthropic.com/engineering/building-effective-agents">Anthropics „Building Effective Agents"</a>,
+<a href="https://mitsloan.mit.edu/ideas-made-to-matter/agentic-ai-explained">MIT Sloans „Agentic AI, explained"</a>,
+<a href="https://www.ibm.com/think/topics/agentic-ai">IBMs „What is Agentic AI?"</a> und
+<a href="https://www.databricks.com/blog/ai-harness">Databricks' „What is an AI Agent Harness?"</a> —
+die vollständige, kommentierte Liste steht in <a href="../RESOURCES.md">RESOURCES.md</a>.</p>
+<p class="citation" data-i18n="es">Definiciones contrastadas con <a href="https://www.anthropic.com/engineering/building-effective-agents">"Building Effective Agents" de Anthropic</a>,
+<a href="https://mitsloan.mit.edu/ideas-made-to-matter/agentic-ai-explained">"Agentic AI, explained" de MIT Sloan</a>,
+<a href="https://www.ibm.com/think/topics/agentic-ai">"What is Agentic AI?" de IBM</a>, y
+<a href="https://www.databricks.com/blog/ai-harness">"What is an AI Agent Harness?" de Databricks</a> —
+la lista completa y comentada está en <a href="../RESOURCES.md">RESOURCES.md</a>.</p>
+
+<nav class="lesson-links">
+  <a href="../lessons/0001-what-agentic-ai-actually-is.html" data-i18n="en">← Lesson 0001: What Agentic AI Actually Is</a>
+  <a href="../lessons/0001-what-agentic-ai-actually-is.html" data-i18n="de">← Lektion 0001: Was Agentic AI eigentlich ist</a>
+  <a href="../lessons/0001-what-agentic-ai-actually-is.html" data-i18n="es">← Lección 0001: Qué es realmente la IA agéntica</a>
+
+  <a href="../index.html" data-i18n="en">Index</a>
+  <a href="../index.html" data-i18n="de">Index</a>
+  <a href="../index.html" data-i18n="es">Índice</a>
+</nav>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,53 @@
+/* Language switcher widget + i18n visibility. Pair with lang-switch.js.
+   Content elements carry data-i18n="en|de|es"; lang-switch.js toggles their
+   display based on the chosen language. Default state below (all hidden)
+   avoids a flash of every language stacked before JS runs. */
+
+/* Spanish shows by default with zero JS (Quick Look, mail previews, printing);
+   lang-switch.js overrides via inline style once it runs. */
+[data-i18n] { display: none; }
+[data-i18n="es"] { display: block; }
+a[data-i18n="es"], span[data-i18n="es"], strong[data-i18n="es"], em[data-i18n="es"] { display: inline; }
+li[data-i18n="es"] { display: list-item; }
+
+.lang-switch {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.2rem;
+  background: var(--paper-inset);
+  border: 1px solid var(--rule);
+  border-radius: 20px;
+  padding: 0.25rem;
+  z-index: 10;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.lang-switch button {
+  border: none;
+  background: transparent;
+  padding: 0.4rem 0.7rem;
+  min-height: 2rem;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  color: var(--ink-soft);
+}
+
+.lang-switch button:hover { color: var(--ink); }
+
+.lang-switch button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+@media (max-width: 30em) {
+  .lang-switch { top: 0.6rem; right: 0.6rem; padding: 0.3rem; }
+}
+
+@media print {
+  .lang-switch { display: none; }
+}

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 0005 — Your Three Dials</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/diagram.css">
+<link rel="stylesheet" href="../assets/quiz.css">
+<link rel="stylesheet" href="../assets/lang-switch.css">
+<script src="../assets/quiz.js"></script>
+<script src="../assets/lang-switch.js"></script>
+</head>
+<body>
+
+<div class="lang-switch">
+  <button data-lang="en">EN</button>
+  <button data-lang="de">DE</button>
+  <button data-lang="es">ES</button>
+</div>
+
+<header class="lesson-header">
+  <p class="eyebrow" data-i18n="en">Lesson 0005 · Agentic AI</p>
+  <p class="eyebrow" data-i18n="de">Lektion 0005 · Agentic AI</p>
+  <p class="eyebrow" data-i18n="es">Lección 0005 · Agentic AI</p>
+
+  <h1 data-i18n="en">Your Three Dials</h1>
+  <h1 data-i18n="de">Deine drei Regler</h1>
+  <h1 data-i18n="es">Tus tres diales</h1>
+
+  <p class="subtitle" data-i18n="en">Hallucination, guardrails, autonomy — Lesson 0002 taught you to judge these in someone else's claim. This lesson is about setting them yourself.</p>
+  <p class="subtitle" data-i18n="de">Halluzination, Leitplanken, Autonomie — Lektion 0002 hat dich gelehrt, diese in fremden Behauptungen zu beurteilen. Diese Lektion handelt davon, sie selbst festzulegen.</p>
+  <p class="subtitle" data-i18n="es">Alucinación, barreras de seguridad, autonomía — la Lección 0002 te enseñó a juzgarlas en la afirmación de otro. Esta lección trata de fijarlas tú mismo.</p>
+</header>
+
+<main>
+
+<div class="mission-tie" data-i18n="en">
+  <strong>Why this now.</strong> You've learned to spot agent hype and to understand the plumbing behind
+  any AI tool. This is the last piece: the day you personally turn on an agentic feature — a calendar
+  assistant, an expense-report tool, an email agent — you'll be the one setting these three dials, not
+  just judging someone else's marketing about them.
+</div>
+<div class="mission-tie" data-i18n="de">
+  <strong>Warum jetzt.</strong> Du hast gelernt, Agenten-Hype zu erkennen und die Technik hinter jedem
+  KI-Tool zu verstehen. Das ist das letzte Puzzleteil: An dem Tag, an dem du selbst eine agentische
+  Funktion aktivierst – einen Kalender-Assistenten, ein Spesenabrechnungs-Tool, einen E-Mail-Agenten –
+  wirst du diese drei Regler selbst einstellen, nicht nur fremdes Marketing darüber beurteilen.
+</div>
+<div class="mission-tie" data-i18n="es">
+  <strong>Por qué ahora.</strong> Has aprendido a detectar el bombo de los agentes y a entender la
+  mecánica detrás de cualquier herramienta de IA. Esta es la última pieza: el día que actives tú mismo una
+  función agéntica — un asistente de calendario, una herramienta de gastos, un agente de correo — serás tú
+  quien fije estos tres diales, no solo quien juzgue el marketing de otro sobre ellos.
+</div>
+
+<h2 data-i18n="en">Hallucination: treat confidence as a draft, not proof</h2>
+<h2 data-i18n="de">Halluzination: Zuversicht als Entwurf behandeln, nicht als Beweis</h2>
+<h2 data-i18n="es">Alucinación: trata la confianza como un borrador, no como prueba</h2>
+
+<p data-i18n="en">A model can state something false with total confidence and zero sign that it's guessing — a
+<strong>hallucination</strong>. The habit that protects you: treat any number, date, or legal/regulatory
+claim from an AI as a draft-quality claim, not a fact, until you've checked it against a real source. A
+confident tone tells you nothing about whether it's correct.</p>
+<p data-i18n="de">Ein Modell kann etwas Falsches mit völliger Überzeugung behaupten, ganz ohne Anzeichen, dass
+es rät – eine <strong>Halluzination</strong>. Die Gewohnheit, die dich schützt: Behandle jede Zahl, jedes
+Datum, jede rechtliche oder regulatorische Angabe von einer KI als Entwurf, nicht als Fakt, bis du sie
+gegen eine echte Quelle geprüft hast. Ein überzeugter Ton sagt nichts darüber aus, ob es stimmt.</p>
+<p data-i18n="es">Un modelo puede afirmar algo falso con total confianza y cero señales de que está
+adivinando — una <strong>alucinación</strong>. El hábito que te protege: trata cualquier número, fecha o
+afirmación legal/normativa de una IA como un borrador, no como un hecho, hasta que la hayas comprobado
+contra una fuente real. Un tono confiado no dice nada sobre si es correcto.</p>
+
+<p data-i18n="en">The practical test: would getting this wrong cost money, break a rule, or embarrass you in
+front of a client? If yes, verify before you use it — a two-minute check against an official source or a
+second search is cheap insurance against a confidently wrong answer.</p>
+<p data-i18n="de">Der praktische Test: Würde ein Fehler hier Geld kosten, gegen eine Regel verstoßen oder dich
+vor einem Kunden blamieren? Wenn ja, vor Nutzung prüfen – eine zweiminütige Kontrolle gegen eine offizielle
+Quelle oder eine zweite Suche ist billige Versicherung gegen eine überzeugend falsche Antwort.</p>
+<p data-i18n="es">La prueba práctica: ¿equivocarse en esto costaría dinero, incumpliría una norma, o te
+avergonzaría delante de un cliente? Si la respuesta es sí, verifícalo antes de usarlo — una comprobación
+de dos minutos contra una fuente oficial o una segunda búsqueda es un seguro barato contra una respuesta
+equivocada con total confianza.</p>
+
+<h2 data-i18n="en">Autonomy: scale it with reversibility</h2>
+<h2 data-i18n="de">Autonomie: nach Umkehrbarkeit staffeln</h2>
+<h2 data-i18n="es">Autonomía: gradúala según la reversibilidad</h2>
+
+<p data-i18n="en">Most agentic tools you'll actually use let you pick a level: ask before every action, auto-handle
+routine ones and flag the rest, or act fully on its own. The rule of thumb that keeps this simple: raise
+<strong>autonomy</strong> only for actions that are cheap and easy to undo. Keep it low anywhere a mistake
+is expensive, embarrassing, or hard to reverse — a sent email, a filed document, a payment.</p>
+<p data-i18n="de">Die meisten agentischen Tools, die du tatsächlich nutzen wirst, lassen dich eine Stufe
+wählen: vor jeder Aktion nachfragen, Routinefälle automatisch erledigen und den Rest melden, oder
+vollständig eigenständig handeln. Die Faustregel, die das einfach hält: <strong>Autonomie</strong> nur für
+Aktionen erhöhen, die billig und leicht rückgängig zu machen sind. Sie niedrig halten, wo ein Fehler teuer,
+peinlich oder schwer umkehrbar ist – eine versendete E-Mail, ein eingereichtes Dokument, eine Zahlung.</p>
+<p data-i18n="es">La mayoría de las herramientas agénticas que realmente usarás te dejan elegir un nivel:
+preguntar antes de cada acción, gestionar automáticamente las rutinarias y marcar el resto, o actuar por
+completo por su cuenta. La regla práctica que lo mantiene simple: sube la <strong>autonomía</strong> solo
+para acciones baratas y fáciles de deshacer. Mantenla baja donde un error sea costoso, vergonzoso o
+difícil de revertir — un correo enviado, un documento presentado, un pago.</p>
+
+<div class="compare" data-i18n="en">
+  <div class="side">
+    <p class="side-label">Safe to raise autonomy</p>
+    <p>Rescheduling a personal reminder. Drafting (not sending) a routine reply. Sorting files into a
+    folder you review weekly.</p>
+  </div>
+  <div class="side">
+    <p class="side-label">Keep autonomy low</p>
+    <p>Sending anything external. Filing anything official. Anything involving a payment or a legal
+    deadline.</p>
+  </div>
+</div>
+<div class="compare" data-i18n="de">
+  <div class="side">
+    <p class="side-label">Autonomie sicher erhöhen</p>
+    <p>Eine private Erinnerung verschieben. Eine Routineantwort entwerfen (nicht versenden). Dateien in
+    einen Ordner sortieren, den du wöchentlich prüfst.</p>
+  </div>
+  <div class="side">
+    <p class="side-label">Autonomie niedrig halten</p>
+    <p>Alles, was nach außen verschickt wird. Alles offiziell Eingereichte. Alles mit Zahlung oder
+    gesetzlicher Frist.</p>
+  </div>
+</div>
+<div class="compare" data-i18n="es">
+  <div class="side">
+    <p class="side-label">Seguro subir la autonomía</p>
+    <p>Reprogramar un recordatorio personal. Redactar (no enviar) una respuesta rutinaria. Clasificar
+    archivos en una carpeta que revisas semanalmente.</p>
+  </div>
+  <div class="side">
+    <p class="side-label">Mantener la autonomía baja</p>
+    <p>Cualquier cosa que se envíe fuera. Cualquier cosa presentada oficialmente. Cualquier cosa con un
+    pago o un plazo legal de por medio.</p>
+  </div>
+</div>
+
+<h2 data-i18n="en">Guardrails: the limit you set before you raise autonomy</h2>
+<h2 data-i18n="de">Leitplanken: die Grenze, die du vor dem Erhöhen der Autonomie setzt</h2>
+<h2 data-i18n="es">Barreras de seguridad: el límite que fijas antes de subir la autonomía</h2>
+
+<p data-i18n="en"><strong>Guardrails</strong> are the concrete limits you put in place before letting a tool act
+with more freedom — a spending cap, a list of what it's never allowed to touch, a rule that anything above
+a threshold gets flagged for you instead of auto-approved. A guardrail is what makes raising autonomy on
+something safe at all; autonomy without a guardrail on a risky step is the actual danger, not autonomy
+itself.</p>
+<p data-i18n="de"><strong>Leitplanken</strong> sind die konkreten Grenzen, die du festlegst, bevor du einem
+Tool mehr Freiheit zum Handeln gibst – ein Ausgabenlimit, eine Liste dessen, was es nie anfassen darf, eine
+Regel, dass alles über einem Schwellenwert dir gemeldet statt automatisch genehmigt wird. Eine Leitplanke
+ist das, was das Erhöhen der Autonomie bei etwas überhaupt sicher macht; Autonomie ohne Leitplanke bei
+einem riskanten Schritt ist die eigentliche Gefahr, nicht die Autonomie selbst.</p>
+<p data-i18n="es">Las <strong>barreras de seguridad</strong> son los límites concretos que pones antes de
+dejar que una herramienta actúe con más libertad — un tope de gasto, una lista de lo que nunca puede
+tocar, una regla de que todo lo que supere un umbral se te marca en vez de aprobarse automáticamente. Una
+barrera de seguridad es lo que hace que subir la autonomía en algo sea seguro en absoluto; la autonomía
+sin barrera de seguridad en un paso arriesgado es el peligro real, no la autonomía en sí.</p>
+
+<div class="gotcha" data-i18n="en">
+  <strong>The rule to actually remember.</strong> Before you raise autonomy on anything: ask what happens
+  if it gets this one wrong, and what guardrail catches that before it causes damage. No answer to that
+  question means the autonomy stays low, no matter how convenient the higher setting looks.
+</div>
+<div class="gotcha" data-i18n="de">
+  <strong>Die Regel, die man sich wirklich merken sollte.</strong> Bevor du irgendwo die Autonomie erhöhst:
+  Frag, was passiert, wenn es hier falsch liegt, und welche Leitplanke das auffängt, bevor Schaden
+  entsteht. Keine Antwort auf diese Frage bedeutet, die Autonomie bleibt niedrig, egal wie praktisch die
+  höhere Einstellung aussieht.
+</div>
+<div class="gotcha" data-i18n="es">
+  <strong>La regla que de verdad hay que recordar.</strong> Antes de subir la autonomía en algo: pregunta
+  qué pasa si se equivoca en esto, y qué barrera de seguridad lo detiene antes de causar daño. No tener
+  respuesta a esa pregunta significa que la autonomía se queda baja, por muy cómodo que parezca el ajuste
+  más alto.
+</div>
+
+<p class="citation" data-i18n="en"><a href="https://www.ibm.com/think/topics/agentic-ai">What is Agentic
+AI? — IBM</a></p>
+<p class="citation" data-i18n="de"><a href="https://www.ibm.com/think/topics/agentic-ai">What is Agentic
+AI? — IBM</a></p>
+<p class="citation" data-i18n="es"><a href="https://www.ibm.com/think/topics/agentic-ai">What is Agentic
+AI? — IBM</a></p>
+
+<h2 data-i18n="en">Practice</h2>
+<h2 data-i18n="de">Übung</h2>
+<h2 data-i18n="es">Práctica</h2>
+
+<div class="quiz-question" data-i18n="en">
+  <p class="quiz-prompt">You're setting up an AI assistant to manage your calendar. Which task is safest
+  to give it high autonomy on?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Auto-declining meeting invites from your manager</button>
+    <button class="quiz-option" data-correct="false">Auto-sending apology emails to clients for scheduling conflicts</button>
+    <button class="quiz-option" data-correct="true">Rescheduling a personal reminder that only you see</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">A personal reminder is low-stakes and trivially reversible — the right place to
+    let a tool act freely. The other two involve external, hard-to-walk-back communication; those are
+    exactly where autonomy should stay low.</p>
+  </div>
+</div>
+<div class="quiz-question" data-i18n="de">
+  <p class="quiz-prompt">Du richtest einen KI-Assistenten zur Kalenderverwaltung ein. Bei welcher Aufgabe
+  ist hohe Autonomie am sichersten?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Meeting-Einladungen von deiner Chefin automatisch ablehnen</button>
+    <button class="quiz-option" data-correct="false">Automatisch Entschuldigungs-E-Mails an Kunden wegen Terminkonflikten verschicken</button>
+    <button class="quiz-option" data-correct="true">Eine private Erinnerung verschieben, die nur du siehst</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">Eine private Erinnerung ist folgenarm und trivial umkehrbar – der richtige Ort,
+    ein Tool frei handeln zu lassen. Die anderen beiden betreffen externe, schwer rückgängig zu machende
+    Kommunikation; genau dort sollte die Autonomie niedrig bleiben.</p>
+  </div>
+</div>
+<div class="quiz-question" data-i18n="es">
+  <p class="quiz-prompt">Estás configurando un asistente de IA para gestionar tu calendario. ¿En qué
+  tarea es más seguro darle mucha autonomía?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Rechazar automáticamente invitaciones a reuniones de tu jefe</button>
+    <button class="quiz-option" data-correct="false">Enviar automáticamente correos de disculpa a clientes por conflictos de horario</button>
+    <button class="quiz-option" data-correct="true">Reprogramar un recordatorio personal que solo ves tú</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">Un recordatorio personal tiene poco en juego y es trivialmente reversible — el
+    lugar correcto para dejar actuar libremente a una herramienta. Las otras dos implican comunicación
+    externa y difícil de deshacer; ahí es exactamente donde la autonomía debe quedarse baja.</p>
+  </div>
+</div>
+
+<div class="quiz-question" data-i18n="en">
+  <p class="quiz-prompt">An AI tool gives you a confident, specific tax percentage for a deduction. What
+  should you do?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Trust it — it sounded precise and confident</button>
+    <button class="quiz-option" data-correct="true">Treat it as a draft claim and verify it against an official source before using it</button>
+    <button class="quiz-option" data-correct="false">Never use AI for anything tax-related, ever</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">Confidence and precision tell you nothing about accuracy — that's exactly what a
+    hallucination looks like. The balanced answer isn't to avoid AI here entirely, it's to verify
+    anything numeric or regulatory before it's actually used.</p>
+  </div>
+</div>
+<div class="quiz-question" data-i18n="de">
+  <p class="quiz-prompt">Ein KI-Tool nennt dir einen überzeugten, konkreten Steuersatz für einen
+  Freibetrag. Was solltest du tun?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Vertrauen — es klang präzise und überzeugt</button>
+    <button class="quiz-option" data-correct="true">Als Entwurf behandeln und vor Nutzung gegen eine offizielle Quelle prüfen</button>
+    <button class="quiz-option" data-correct="false">KI für steuerliche Themen grundsätzlich nie nutzen</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">Überzeugung und Präzision sagen nichts über Richtigkeit aus – genau so sieht eine
+    Halluzination aus. Die ausgewogene Antwort ist nicht, KI hier komplett zu meiden, sondern alles
+    Zahlenbasierte oder Regulatorische vor der tatsächlichen Nutzung zu prüfen.</p>
+  </div>
+</div>
+<div class="quiz-question" data-i18n="es">
+  <p class="quiz-prompt">Una herramienta de IA te da un porcentaje de impuestos específico y confiado para
+  una deducción. ¿Qué deberías hacer?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Confiar en ello — sonaba preciso y seguro</button>
+    <button class="quiz-option" data-correct="true">Tratarlo como un borrador y verificarlo contra una fuente oficial antes de usarlo</button>
+    <button class="quiz-option" data-correct="false">No usar nunca IA para nada relacionado con impuestos</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">La confianza y la precisión no dicen nada sobre la exactitud — así es exactamente
+    como se ve una alucinación. La respuesta equilibrada no es evitar la IA aquí por completo, sino
+    verificar cualquier dato numérico o normativo antes de usarlo de verdad.</p>
+  </div>
+</div>
+
+<div class="recall-card" data-i18n="en">
+  <div class="prompt">Name your three dials and the rule of thumb for each.</div>
+  <div class="hint">Recall from memory first — then click.</div>
+  <div class="answer">
+    Hallucination: verify anything numeric or legal before using it. Autonomy: scale it with how
+    reversible the action is. Guardrails: the limit you set before raising autonomy on anything risky.
+  </div>
+</div>
+<div class="recall-card" data-i18n="de">
+  <div class="prompt">Nenne deine drei Regler und die Faustregel für jeden.</div>
+  <div class="hint">Erst aus dem Gedächtnis abrufen — dann klicken.</div>
+  <div class="answer">
+    Halluzination: alles Zahlenbasierte oder Rechtliche vor Nutzung prüfen. Autonomie: nach Umkehrbarkeit
+    der Aktion staffeln. Leitplanken: die Grenze, die man vor dem Erhöhen der Autonomie bei etwas
+    Riskantem setzt.
+  </div>
+</div>
+<div class="recall-card" data-i18n="es">
+  <div class="prompt">Nombra tus tres diales y la regla práctica de cada uno.</div>
+  <div class="hint">Recuerda primero de memoria — luego haz clic.</div>
+  <div class="answer">
+    Alucinación: verificar cualquier dato numérico o legal antes de usarlo. Autonomía: graduarla según lo
+    reversible que sea la acción. Barreras de seguridad: el límite que fijas antes de subir la autonomía
+    en algo arriesgado.
+  </div>
+</div>
+
+<div class="teach-back" data-i18n="en">
+  <p class="teach-prompt">You're about to turn on an AI assistant that can auto-file your expense
+  reports. Walk through how you'd decide its settings, using this lesson.</p>
+  <textarea class="teach-input" rows="4" placeholder="Write it out before revealing…"></textarea>
+  <button class="teach-reveal">Reveal what a strong answer covers</button>
+  <div class="teach-checklist">
+    <p class="checklist-label">A strong answer hits:</p>
+    <ul>
+      <li>Asks what's reversible if it gets a category or amount wrong, and what isn't.</li>
+      <li>Starts with low autonomy — draft-only, or auto-file only below some safe threshold — rather
+      than full autonomy on day one.</li>
+      <li>Defines a concrete guardrail up front: a spending cap, or a rule that anything above a set
+      amount gets flagged instead of auto-filed.</li>
+      <li>Plans to spot-check its early filings specifically for hallucinated categories or amounts,
+      rather than assuming confidence means correctness.</li>
+      <li>Raises autonomy gradually, only after the low-autonomy period shows it's reliable.</li>
+    </ul>
+  </div>
+</div>
+<div class="teach-back" data-i18n="de">
+  <p class="teach-prompt">Du bist dabei, einen KI-Assistenten zu aktivieren, der deine
+  Spesenabrechnungen automatisch einreichen kann. Geh durch, wie du seine Einstellungen festlegen würdest,
+  mit dieser Lektion im Kopf.</p>
+  <textarea class="teach-input" rows="4" placeholder="Erst aufschreiben, dann aufdecken…"></textarea>
+  <button class="teach-reveal">Aufdecken, was eine starke Antwort abdeckt</button>
+  <div class="teach-checklist">
+    <p class="checklist-label">Eine starke Antwort trifft:</p>
+    <ul>
+      <li>Fragt, was umkehrbar ist, wenn es eine Kategorie oder einen Betrag falsch einträgt, und was
+      nicht.</li>
+      <li>Beginnt mit niedriger Autonomie – nur Entwurf, oder automatisches Einreichen nur unterhalb
+      eines sicheren Schwellenwerts – statt voller Autonomie am ersten Tag.</li>
+      <li>Legt vorab eine konkrete Leitplanke fest: ein Ausgabenlimit, oder eine Regel, dass alles über
+      einem festgelegten Betrag gemeldet statt automatisch eingereicht wird.</li>
+      <li>Plant, die ersten Einreichungen gezielt auf halluzinierte Kategorien oder Beträge zu prüfen,
+      statt anzunehmen, dass Überzeugung Richtigkeit bedeutet.</li>
+      <li>Erhöht die Autonomie schrittweise, erst nachdem die Phase mit niedriger Autonomie gezeigt hat,
+      dass es zuverlässig ist.</li>
+    </ul>
+  </div>
+</div>
+<div class="teach-back" data-i18n="es">
+  <p class="teach-prompt">Estás a punto de activar un asistente de IA que puede presentar
+  automáticamente tus informes de gastos. Explica cómo decidirías sus ajustes, usando esta lección.</p>
+  <textarea class="teach-input" rows="4" placeholder="Escríbelo antes de revelar…"></textarea>
+  <button class="teach-reveal">Revelar qué cubre una buena respuesta</button>
+  <div class="teach-checklist">
+    <p class="checklist-label">Una buena respuesta incluye:</p>
+    <ul>
+      <li>Pregunta qué es reversible si se equivoca en una categoría o un importe, y qué no.</li>
+      <li>Empieza con poca autonomía — solo borrador, o presentación automática solo por debajo de un
+      umbral seguro — en lugar de autonomía total el primer día.</li>
+      <li>Define de antemano una barrera de seguridad concreta: un tope de gasto, o una regla de que
+      todo lo que supere un importe fijado se marca en vez de presentarse automáticamente.</li>
+      <li>Planea revisar sus primeras presentaciones específicamente en busca de categorías o importes
+      alucinados, en vez de asumir que la confianza significa que es correcto.</li>
+      <li>Sube la autonomía gradualmente, solo después de que el periodo de poca autonomía demuestre que
+      es fiable.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="win-box" data-i18n="en">
+  <strong>Your win.</strong> You can now actually configure an agentic feature responsibly — not just
+  judge someone else's marketing claim about one. Three dials, one rule each: verify, scale with
+  reversibility, and guardrail before you raise autonomy.
+</div>
+<div class="win-box" data-i18n="de">
+  <strong>Dein Gewinn.</strong> Du kannst jetzt eine agentische Funktion tatsächlich verantwortungsvoll
+  einstellen – nicht nur fremdes Marketing darüber beurteilen. Drei Regler, je eine Regel: prüfen, nach
+  Umkehrbarkeit staffeln, und Leitplanke setzen, bevor du die Autonomie erhöhst.
+</div>
+<div class="win-box" data-i18n="es">
+  <strong>Tu logro.</strong> Ahora puedes configurar de verdad una función agéntica de forma responsable —
+  no solo juzgar el marketing de otro sobre ella. Tres diales, una regla cada uno: verificar, graduar
+  según reversibilidad, y poner barrera de seguridad antes de subir la autonomía.
+</div>
+
+<div class="primary-source" data-i18n="en">
+  <p class="eyebrow">Primary source</p>
+  <p><a href="https://www.ibm.com/think/topics/agentic-ai">What is Agentic AI? — IBM</a>. Names autonomy,
+  goal-driven behavior, and adaptability as the defining traits — useful for grounding what you're
+  actually adjusting when you raise or lower a tool's autonomy setting.</p>
+</div>
+<div class="primary-source" data-i18n="de">
+  <p class="eyebrow">Primärquelle</p>
+  <p><a href="https://www.ibm.com/think/topics/agentic-ai">What is Agentic AI? — IBM</a> (Englisch).
+  Benennt Autonomie, zielgerichtetes Verhalten und Anpassungsfähigkeit als die entscheidenden
+  Eigenschaften – nützlich, um zu verstehen, was man wirklich verändert, wenn man die
+  Autonomie-Einstellung eines Tools erhöht oder senkt.</p>
+</div>
+<div class="primary-source" data-i18n="es">
+  <p class="eyebrow">Fuente principal</p>
+  <p><a href="https://www.ibm.com/think/topics/agentic-ai">What is Agentic AI? — IBM</a> (en inglés).
+  Nombra la autonomía, el comportamiento orientado a objetivos y la adaptabilidad como los rasgos
+  definitorios — útil para entender qué estás ajustando realmente cuando subes o bajas el nivel de
+  autonomía de una herramienta.</p>
+</div>
+
+<h2 data-i18n="en">Next</h2>
+<h2 data-i18n="de">Als Nächstes</h2>
+<h2 data-i18n="es">Siguiente</h2>
+
+<p data-i18n="en">That's the full glossary covered, from both sides — spotting the terms, and now actually using
+them. Next session, whenever you're ready: a hands-on walkthrough of one real tool, putting everything
+from Lessons 0001–0005 to work on something concrete.</p>
+<p data-i18n="de">Damit ist das gesamte Glossar von beiden Seiten abgedeckt – die Begriffe erkennen, und jetzt
+sie tatsächlich anwenden. Nächste Sitzung, sobald du bereit bist: ein praktischer Durchgang durch ein
+echtes Tool, bei dem alles aus den Lektionen 0001–0005 an etwas Konkretem angewendet wird.</p>
+<p data-i18n="es">Con esto queda cubierto todo el glosario, desde ambos lados — detectar los términos, y
+ahora usarlos de verdad. Próxima sesión, cuando estés listo: un recorrido práctico por una herramienta
+real, poniendo todo lo de las Lecciones 0001–0005 a trabajar sobre algo concreto.</p>
+
+<div class="ask-agent" data-i18n="en">
+  <strong>Ask your teacher.</strong> Good questions to try now: <em>"help me set guardrails for [a real
+  agentic feature I'm considering]"</em>, <em>"what autonomy level makes sense for [some task]?"</em>, or
+  <em>"double-check this AI-generated number against a real source for me."</em>
+</div>
+<div class="ask-agent" data-i18n="de">
+  <strong>Frag deine Lehrkraft.</strong> Gute Fragen zum Ausprobieren: <em>„Hilf mir, Leitplanken für
+  [eine echte agentische Funktion, die ich in Betracht ziehe] festzulegen"</em>, <em>„Welche Autonomiestufe
+  ist sinnvoll für [eine bestimmte Aufgabe]?"</em>, oder <em>„Prüfe diese KI-generierte Zahl für mich
+  gegen eine echte Quelle."</em>
+</div>
+<div class="ask-agent" data-i18n="es">
+  <strong>Pregunta a tu profesor.</strong> Buenas preguntas para probar ahora: <em>"ayúdame a fijar
+  barreras de seguridad para [una función agéntica real que estoy considerando]"</em>, <em>"¿qué nivel de
+  autonomía tiene sentido para [alguna tarea]?"</em>, o <em>"comprueba este dato generado por IA contra
+  una fuente real por mí."</em>
+</div>
+
+<nav class="lesson-links">
+  <a href="0004-harness-and-sandbox.html" data-i18n="en">← Lesson 0004: Harness and Sandbox</a>
+  <a href="0004-harness-and-sandbox.html" data-i18n="de">← Lektion 0004: Harness und Sandbox</a>
+  <a href="0004-harness-and-sandbox.html" data-i18n="es">← Lección 0004: Harness y Sandbox</a>
+
+  <a href="../reference/glossary.html" data-i18n="en">Reference: Glossary</a>
+  <a href="../reference/glossary.html" data-i18n="de">Referenz: Glossar</a>
+  <a href="../reference/glossary.html" data-i18n="es">Referencia: Glosario</a>
+
+  <a href="../index.html" data-i18n="en">Index — you're all caught up →</a>
+  <a href="../index.html" data-i18n="de">Index — du bist auf dem neuesten Stand →</a>
+  <a href="../index.html" data-i18n="es">Índice — ya estás al día →</a>
+</nav>
+
+</main>
+</body>
+</html>

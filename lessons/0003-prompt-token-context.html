@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 0003 — Prompt, Token, Context</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/diagram.css">
+<link rel="stylesheet" href="../assets/quiz.css">
+<link rel="stylesheet" href="../assets/lang-switch.css">
+<script src="../assets/quiz.js"></script>
+<script src="../assets/lang-switch.js"></script>
+</head>
+<body>
+
+<div class="lang-switch">
+  <button data-lang="en">EN</button>
+  <button data-lang="de">DE</button>
+  <button data-lang="es">ES</button>
+</div>
+
+<header class="lesson-header">
+  <p class="eyebrow" data-i18n="en">Lesson 0003 · Agentic AI</p>
+  <p class="eyebrow" data-i18n="de">Lektion 0003 · Agentic AI</p>
+  <p class="eyebrow" data-i18n="es">Lección 0003 · Agentic AI</p>
+
+  <h1 data-i18n="en">Prompt, Token, Context</h1>
+  <h1 data-i18n="de">Prompt, Token, Kontext</h1>
+  <h1 data-i18n="es">Prompt, Token, Contexto</h1>
+
+  <p class="subtitle" data-i18n="en">Three words explain why AI tools have size limits, per-use pricing, and a habit of "forgetting" what you said ten minutes ago.</p>
+  <p class="subtitle" data-i18n="de">Drei Wörter erklären, warum KI-Tools Größenlimits, nutzungsbasierte Preise haben und dazu neigen, zu „vergessen", was du vor zehn Minuten gesagt hast.</p>
+  <p class="subtitle" data-i18n="es">Tres palabras explican por qué las herramientas de IA tienen límites de tamaño, precios por uso, y la costumbre de "olvidar" lo que dijiste hace diez minutos.</p>
+</header>
+
+<main>
+
+<div class="mission-tie" data-i18n="en">
+  <strong>Why this now.</strong> The first two lessons covered agent behavior — deciding, acting,
+  guardrails. This one covers the plumbing underneath <em>any</em> AI tool, agentic or not: what actually
+  determines its cost and its reliability day to day. Useful the next time you wonder why pasting a
+  document changed the price, or why a long chat stopped making sense.
+</div>
+<div class="mission-tie" data-i18n="de">
+  <strong>Warum jetzt.</strong> Die ersten beiden Lektionen behandelten agentisches Verhalten –
+  entscheiden, handeln, Leitplanken. Diese hier behandelt die Technik darunter, bei <em>jedem</em>
+  KI-Tool, ob agentisch oder nicht: was tatsächlich Kosten und Zuverlässigkeit im Alltag bestimmt.
+  Nützlich, wenn du das nächste Mal fragst, warum das Einfügen eines Dokuments den Preis verändert hat,
+  oder warum ein langer Chat auf einmal keinen Sinn mehr ergab.
+</div>
+<div class="mission-tie" data-i18n="es">
+  <strong>Por qué ahora.</strong> Las dos primeras lecciones trataban el comportamiento del agente —
+  decidir, actuar, barreras de seguridad. Esta trata la mecánica que hay debajo de <em>cualquier</em>
+  herramienta de IA, agéntica o no: lo que realmente determina su coste y su fiabilidad en el día a día.
+  Útil la próxima vez que te preguntes por qué pegar un documento cambió el precio, o por qué un chat
+  largo dejó de tener sentido.
+</div>
+
+<h2 data-i18n="en">Model and LLM, quickly</h2>
+<h2 data-i18n="de">Modell und LLM, kurz</h2>
+<h2 data-i18n="es">Modelo y LLM, rápido</h2>
+
+<p data-i18n="en">A quick recap from the glossary, since everything below builds on it: a <strong>model</strong> is the
+trained "brain" — a file of learned numbers that turns an input into an output. An <strong>LLM</strong>
+(large language model) is a model trained specifically on text. Claude, ChatGPT, and Gemini are all
+products built around an LLM. When people say "the model," in an AI chat context, they usually mean the
+LLM doing the talking.</p>
+<p data-i18n="de">Eine kurze Auffrischung aus dem Glossar, denn alles Folgende baut darauf auf: Ein
+<strong>Modell</strong> ist das trainierte „Gehirn" – eine Datei aus gelernten Zahlen, die eine Eingabe in
+eine Ausgabe verwandelt. Ein <strong>LLM</strong> (großes Sprachmodell) ist ein Modell, das speziell auf
+Text trainiert wurde. Claude, ChatGPT und Gemini sind alles Produkte, die auf einem LLM aufbauen. Wenn
+Leute im Kontext eines KI-Chats „das Modell" sagen, meinen sie meist das LLM, das gerade mit ihnen
+„spricht".</p>
+<p data-i18n="es">Un repaso rápido del glosario, porque todo lo de abajo se apoya en esto: un
+<strong>modelo</strong> es el "cerebro" entrenado — un archivo de números aprendidos que convierte una
+entrada en una salida. Un <strong>LLM</strong> (modelo de lenguaje grande) es un modelo entrenado
+específicamente con texto. Claude, ChatGPT y Gemini son todos productos construidos alrededor de un LLM.
+Cuando la gente dice "el modelo" en el contexto de un chat de IA, normalmente se refiere al LLM que está
+"hablando".</p>
+
+<h2 data-i18n="en">Prompt: the one lever you control</h2>
+<h2 data-i18n="de">Prompt: der eine Hebel, den du kontrollierst</h2>
+<h2 data-i18n="es">Prompt: la única palanca que controlas</h2>
+
+<p data-i18n="en">Everything you send — your question, instruction, attached document — is the <strong>prompt</strong>.
+It's the one input entirely in your hands, and it shapes the output more than any setting in the tool.
+Vague in, vague out; specific in, specific out.</p>
+<p data-i18n="de">Alles, was du schickst – deine Frage, Anweisung, angehängtes Dokument – ist der
+<strong>Prompt</strong>. Es ist die eine Eingabe, die vollständig in deiner Hand liegt, und sie prägt die
+Ausgabe mehr als jede Einstellung im Tool. Vage rein, vage raus; konkret rein, konkret raus.</p>
+<p data-i18n="es">Todo lo que envías — tu pregunta, instrucción, documento adjunto — es el <strong>prompt</strong>.
+Es la única entrada que está completamente en tus manos, y determina la salida más que cualquier ajuste
+de la herramienta. Si entra vago, sale vago; si entra concreto, sale concreto.</p>
+
+<div class="compare" data-i18n="en">
+  <div class="side">
+    <p class="side-label">Vague prompt</p>
+    <p>"Summarize this."</p>
+    <p>→ Generic length, generic focus, you have to guess what mattered to keep.</p>
+  </div>
+  <div class="side">
+    <p class="side-label">Specific prompt</p>
+    <p>"Summarize this vendor contract's payment terms in 3 bullet points, for a colleague who hasn't
+    read it."</p>
+    <p>→ Right length, right focus, usable without more back-and-forth.</p>
+  </div>
+</div>
+<div class="compare" data-i18n="de">
+  <div class="side">
+    <p class="side-label">Vager Prompt</p>
+    <p>„Fasse das zusammen."</p>
+    <p>→ Generische Länge, generischer Fokus, du musst raten, was wichtig war zu behalten.</p>
+  </div>
+  <div class="side">
+    <p class="side-label">Konkreter Prompt</p>
+    <p>„Fasse die Zahlungsbedingungen dieses Liefervertrags in 3 Stichpunkten zusammen, für eine Kollegin,
+    die ihn nicht gelesen hat."</p>
+    <p>→ Richtige Länge, richtiger Fokus, nutzbar ohne weiteres Hin und Her.</p>
+  </div>
+</div>
+<div class="compare" data-i18n="es">
+  <div class="side">
+    <p class="side-label">Prompt vago</p>
+    <p>"Resume esto."</p>
+    <p>→ Longitud genérica, enfoque genérico, tienes que adivinar qué era importante conservar.</p>
+  </div>
+  <div class="side">
+    <p class="side-label">Prompt concreto</p>
+    <p>"Resume las condiciones de pago de este contrato de proveedor en 3 puntos, para un compañero que
+    no lo ha leído."</p>
+    <p>→ Longitud correcta, enfoque correcto, utilizable sin más idas y vueltas.</p>
+  </div>
+</div>
+
+<h2 data-i18n="en">Token: the billing unit</h2>
+<h2 data-i18n="de">Token: die Abrechnungseinheit</h2>
+<h2 data-i18n="es">Token: la unidad de facturación</h2>
+
+<p data-i18n="en">The model doesn't read in words — it reads in <strong>tokens</strong>, chunks of roughly three-quarters
+of a word in English. <em>Input tokens</em> are everything you send in; <em>output tokens</em> are
+everything it generates back. This matters in practice because usage-based AI pricing is almost always
+billed per token — input and output counted, and priced, separately.</p>
+<p data-i18n="de">Das Modell liest nicht in Wörtern – es liest in <strong>Tokens</strong>, Häppchen von etwa drei
+Vierteln eines Wortes im Englischen. <em>Input-Tokens</em> sind alles, was du hineinschickst;
+<em>Output-Tokens</em> sind alles, was zurückkommt. Das ist praktisch relevant, weil nutzungsbasierte
+KI-Preise fast immer pro Token abgerechnet werden – Eingabe und Ausgabe getrennt gezählt und getrennt
+bepreist.</p>
+<p data-i18n="es">El modelo no lee en palabras — lee en <strong>tokens</strong>, fragmentos de aproximadamente
+tres cuartas partes de una palabra en inglés. Los <em>tokens de entrada</em> son todo lo que envías; los
+<em>tokens de salida</em> son todo lo que genera de vuelta. Esto importa en la práctica porque los
+precios de IA por uso casi siempre se cobran por token — entrada y salida contadas, y tarificadas, por
+separado.</p>
+
+<div class="gotcha" data-i18n="en">
+  <strong>The part people miss.</strong> Pasting a 10-page contract in and asking for a one-paragraph
+  summary uses many input tokens and very few output tokens. The cost is driven mostly by what you paste
+  in, not by how short your actual question is — a short question about a long document is not a cheap
+  request.
+</div>
+<div class="gotcha" data-i18n="de">
+  <strong>Der Teil, den man übersieht.</strong> Einen zehnseitigen Vertrag einzufügen und um eine
+  Ein-Absatz-Zusammenfassung zu bitten, verbraucht viele Input-Tokens und sehr wenige Output-Tokens. Die
+  Kosten werden vor allem von dem bestimmt, was du einfügst, nicht davon, wie kurz deine eigentliche Frage
+  ist – eine kurze Frage zu einem langen Dokument ist keine billige Anfrage.
+</div>
+<div class="gotcha" data-i18n="es">
+  <strong>La parte que se pasa por alto.</strong> Pegar un contrato de 10 páginas y pedir un resumen de un
+  párrafo usa muchos tokens de entrada y muy pocos de salida. El coste lo determina sobre todo lo que
+  pegas, no lo corta que sea tu pregunta real — una pregunta corta sobre un documento largo no es una
+  petición barata.
+</div>
+
+<h2 data-i18n="en">Context window: the working memory limit</h2>
+<h2 data-i18n="de">Kontextfenster: die Grenze des Arbeitsgedächtnisses</h2>
+<h2 data-i18n="es">Ventana de contexto: el límite de la memoria de trabajo</h2>
+
+<p data-i18n="en">Everything the model can currently "see" — your prompt, attached documents, the conversation so
+far — is its <strong>context</strong>. The <strong>context window</strong> is the hard size limit on
+that, measured in tokens. It's effectively the model's short-term working memory for this one
+conversation. Go past the limit and the oldest material starts falling out of view — the model doesn't
+remember it was ever there.</p>
+<p data-i18n="de">Alles, was das Modell gerade „sehen" kann – dein Prompt, angehängte Dokumente, das bisherige
+Gespräch – ist sein <strong>Kontext</strong>. Das <strong>Kontextfenster</strong> ist die harte
+Größengrenze dafür, gemessen in Tokens. Es ist praktisch das Kurzzeitgedächtnis des Modells für genau
+dieses eine Gespräch. Überschreitet man die Grenze, fällt das älteste Material aus dem Blickfeld – das
+Modell erinnert sich nicht mehr daran, dass es je da war.</p>
+<p data-i18n="es">Todo lo que el modelo puede "ver" en este momento — tu prompt, documentos adjuntos, la
+conversación hasta ahora — es su <strong>contexto</strong>. La <strong>ventana de contexto</strong> es el
+límite de tamaño fijo para eso, medido en tokens. Es, en la práctica, la memoria de trabajo a corto plazo
+del modelo para esa conversación concreta. Si se supera el límite, el material más antiguo empieza a
+desaparecer de la vista — el modelo no recuerda que existió.</p>
+
+<p data-i18n="en">This is why a very long chat session sometimes seems to "forget" something you said at the start.
+It isn't a mood, and it isn't the model getting worse — it's the window filling up and the oldest content
+falling out. Two practical habits follow directly: start a fresh conversation when you switch topics
+rather than piling onto one endless thread, and check a tool's context window size before pasting in
+something huge (a full contract, a long email chain) if you need it to stay "in view" for a while.</p>
+<p data-i18n="de">Deshalb wirkt es manchmal so, als würde ein sehr langer Chat plötzlich „vergessen", was du am
+Anfang gesagt hast. Das ist keine Laune, und das Modell wird auch nicht schlechter – das Fenster läuft
+voll, und der älteste Inhalt fällt heraus. Daraus folgen zwei praktische Gewohnheiten: bei Themenwechsel
+lieber einen neuen Chat starten, statt alles in einen endlosen Thread zu packen, und vor dem Einfügen von
+etwas Großem (ein ganzer Vertrag, eine lange E-Mail-Kette) die Größe des Kontextfensters eines Tools zu
+prüfen, wenn es eine Weile „im Blick" bleiben soll.</p>
+<p data-i18n="es">Por eso una conversación muy larga a veces parece "olvidar" algo que dijiste al principio. No
+es un cambio de humor, ni el modelo empeorando — es la ventana llenándose y el contenido más antiguo
+cayendo fuera. De ahí se siguen dos hábitos prácticos: empezar una conversación nueva al cambiar de tema
+en vez de amontonarlo todo en un hilo interminable, y comprobar el tamaño de la ventana de contexto de
+una herramienta antes de pegar algo enorme (un contrato entero, una cadena de correos larga) si necesitas
+que siga "a la vista" un rato.</p>
+
+<p class="citation" data-i18n="en"><a href="https://redis.io/blog/llm-context-windows/">LLM context
+windows: what they are & how they work — Redis</a></p>
+<p class="citation" data-i18n="de"><a href="https://redis.io/blog/llm-context-windows/">LLM context
+windows: what they are & how they work — Redis</a></p>
+<p class="citation" data-i18n="es"><a href="https://redis.io/blog/llm-context-windows/">LLM context
+windows: what they are & how they work — Redis</a></p>
+
+<h2 data-i18n="en">Practice</h2>
+<h2 data-i18n="de">Übung</h2>
+<h2 data-i18n="es">Práctica</h2>
+
+<div class="quiz-question" data-i18n="en">
+  <p class="quiz-prompt">You ask two questions to the same AI tool, both one sentence long. One costs
+  noticeably more than the other. What's the most likely reason?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Output is always priced the same regardless of input, so this can't happen</button>
+    <button class="quiz-option" data-correct="true">One question had a large document attached, adding many input tokens</button>
+    <button class="quiz-option" data-correct="false">Questions asked later in the day cost more</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">The question's own length barely matters if a large document rode along with it —
+    input tokens (everything you send, attachments included) are counted and priced, and a long document
+    dwarfs a one-sentence question.</p>
+  </div>
+</div>
+<div class="quiz-question" data-i18n="de">
+  <p class="quiz-prompt">Du stellst demselben KI-Tool zwei Fragen, beide nur einen Satz lang. Eine kostet
+  spürbar mehr als die andere. Was ist der wahrscheinlichste Grund?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Output wird immer gleich bepreist, unabhängig vom Input — das kann also nicht sein</button>
+    <button class="quiz-option" data-correct="true">Bei einer Frage war ein großes Dokument angehängt, das viele Input-Tokens hinzufügt</button>
+    <button class="quiz-option" data-correct="false">Fragen, die später am Tag gestellt werden, kosten mehr</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">Die Länge der Frage selbst spielt kaum eine Rolle, wenn ein großes Dokument mit
+    dabei war – Input-Tokens (alles, was du schickst, Anhänge eingeschlossen) werden gezählt und bepreist,
+    und ein langes Dokument übertrifft eine Ein-Satz-Frage bei Weitem.</p>
+  </div>
+</div>
+<div class="quiz-question" data-i18n="es">
+  <p class="quiz-prompt">Haces dos preguntas a la misma herramienta de IA, ambas de una sola frase. Una
+  cuesta notablemente más que la otra. ¿Cuál es la razón más probable?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">La salida siempre se cobra igual sin importar la entrada, así que esto no puede pasar</button>
+    <button class="quiz-option" data-correct="true">Una de las preguntas llevaba un documento grande adjunto, añadiendo muchos tokens de entrada</button>
+    <button class="quiz-option" data-correct="false">Las preguntas hechas más tarde en el día cuestan más</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">La longitud de la propia pregunta casi no importa si un documento grande la
+    acompañaba — los tokens de entrada (todo lo que envías, adjuntos incluidos) se cuentan y se
+    tarifican, y un documento largo supera con creces a una pregunta de una frase.</p>
+  </div>
+</div>
+
+<div class="quiz-question" data-i18n="en">
+  <p class="quiz-prompt">Deep into a very long chat, the assistant suddenly seems to have no idea about
+  something you established at the very start. What's the likely cause?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">The model has gotten tired and is performing worse</button>
+    <button class="quiz-option" data-correct="true">The context window filled up and the oldest material fell out of view</button>
+    <button class="quiz-option" data-correct="false">You must have phrased something confusingly</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">Models don't get tired. Once a conversation's total tokens exceed the context
+    window, the oldest content is no longer visible to the model at all — not a performance dip, a hard
+    size limit being hit.</p>
+  </div>
+</div>
+<div class="quiz-question" data-i18n="de">
+  <p class="quiz-prompt">Tief in einem sehr langen Chat scheint der Assistent plötzlich keine Ahnung mehr
+  von etwas zu haben, das du ganz am Anfang festgelegt hattest. Was ist die wahrscheinliche Ursache?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">Das Modell ist „müde" geworden und liefert schlechtere Leistung</button>
+    <button class="quiz-option" data-correct="true">Das Kontextfenster ist vollgelaufen, und der älteste Inhalt ist aus dem Blickfeld gefallen</button>
+    <button class="quiz-option" data-correct="false">Du musst dich verwirrend ausgedrückt haben</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">Modelle werden nicht müde. Sobald die Gesamt-Tokens eines Gesprächs das
+    Kontextfenster übersteigen, ist der älteste Inhalt für das Modell überhaupt nicht mehr sichtbar –
+    kein Leistungseinbruch, sondern eine harte Größengrenze, die erreicht wurde.</p>
+  </div>
+</div>
+<div class="quiz-question" data-i18n="es">
+  <p class="quiz-prompt">Muy avanzado un chat larguísimo, el asistente de repente parece no tener ni idea
+  de algo que estableciste al principio. ¿Cuál es la causa probable?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" data-correct="false">El modelo se ha "cansado" y rinde peor</button>
+    <button class="quiz-option" data-correct="true">La ventana de contexto se llenó y el material más antiguo cayó fuera de la vista</button>
+    <button class="quiz-option" data-correct="false">Seguro que expresaste algo de forma confusa</button>
+  </div>
+  <div class="quiz-feedback">
+    <span class="verdict"></span>
+    <p class="explain">Los modelos no se cansan. En cuanto los tokens totales de una conversación superan
+    la ventana de contexto, el contenido más antiguo deja de ser visible para el modelo por completo — no
+    es una bajada de rendimiento, es un límite de tamaño fijo que se ha alcanzado.</p>
+  </div>
+</div>
+
+<div class="recall-card" data-i18n="en">
+  <div class="prompt">In one sentence: why does pasting a large document into an AI chat typically cost
+  more, even if your actual question is short?</div>
+  <div class="hint">Recall from memory first — then click.</div>
+  <div class="answer">
+    Because pricing counts input tokens separately, and a large pasted document adds many input tokens
+    regardless of how short the question itself is.
+  </div>
+</div>
+<div class="recall-card" data-i18n="de">
+  <div class="prompt">In einem Satz: Warum kostet das Einfügen eines großen Dokuments in einen KI-Chat
+  meist mehr, selbst wenn deine eigentliche Frage kurz ist?</div>
+  <div class="hint">Erst aus dem Gedächtnis abrufen — dann klicken.</div>
+  <div class="answer">
+    Weil die Preisgestaltung Input-Tokens getrennt zählt, und ein groß eingefügtes Dokument viele
+    Input-Tokens hinzufügt, egal wie kurz die Frage selbst ist.
+  </div>
+</div>
+<div class="recall-card" data-i18n="es">
+  <div class="prompt">En una frase: ¿por qué pegar un documento grande en un chat de IA suele costar más,
+  aunque tu pregunta real sea corta?</div>
+  <div class="hint">Recuerda primero de memoria — luego haz clic.</div>
+  <div class="answer">
+    Porque el precio cuenta los tokens de entrada por separado, y un documento grande pegado añade
+    muchos tokens de entrada sin importar lo corta que sea la pregunta en sí.
+  </div>
+</div>
+
+<div class="teach-back" data-i18n="en">
+  <p class="teach-prompt">A colleague says: "I don't get why the AI assistant forgot what we discussed an
+  hour ago in the same chat — feels random." Using this lesson, what would you tell them?</p>
+  <textarea class="teach-input" rows="4" placeholder="Write it out before revealing…"></textarea>
+  <button class="teach-reveal">Reveal what a strong answer covers</button>
+  <div class="teach-checklist">
+    <p class="checklist-label">A strong answer hits:</p>
+    <ul>
+      <li>Names the context window as a hard size limit, not a mood or a bug.</li>
+      <li>Explains that the oldest material falls out of view first as a long chat keeps growing.</li>
+      <li>Suggests starting a fresh conversation for a new topic, or re-stating key facts if they still
+      matter deep into a long thread.</li>
+      <li>Makes clear it isn't the model "getting worse" over time — it's a structural limit being hit,
+      the same every time.</li>
+    </ul>
+  </div>
+</div>
+<div class="teach-back" data-i18n="de">
+  <p class="teach-prompt">Ein Kollege sagt: „Ich verstehe nicht, warum der KI-Assistent vergessen hat, was
+  wir vor einer Stunde im selben Chat besprochen haben – fühlt sich zufällig an." Was würdest du ihm, mit
+  dieser Lektion im Kopf, sagen?</p>
+  <textarea class="teach-input" rows="4" placeholder="Erst aufschreiben, dann aufdecken…"></textarea>
+  <button class="teach-reveal">Aufdecken, was eine starke Antwort abdeckt</button>
+  <div class="teach-checklist">
+    <p class="checklist-label">Eine starke Antwort trifft:</p>
+    <ul>
+      <li>Benennt das Kontextfenster als harte Größengrenze, nicht als Laune oder Fehler.</li>
+      <li>Erklärt, dass bei einem wachsenden langen Chat der älteste Inhalt zuerst aus dem Blickfeld
+      fällt.</li>
+      <li>Schlägt vor, bei einem neuen Thema einen frischen Chat zu starten oder wichtige Fakten erneut
+      zu nennen, wenn sie tief in einem langen Thread noch wichtig sind.</li>
+      <li>Macht klar, dass das Modell mit der Zeit nicht „schlechter wird" – es wird eine strukturelle
+      Grenze erreicht, jedes Mal dieselbe.</li>
+    </ul>
+  </div>
+</div>
+<div class="teach-back" data-i18n="es">
+  <p class="teach-prompt">Un compañero dice: "No entiendo por qué el asistente de IA olvidó lo que
+  hablamos hace una hora en el mismo chat — parece aleatorio." Con esta lección en mente, ¿qué le
+  dirías?</p>
+  <textarea class="teach-input" rows="4" placeholder="Escríbelo antes de revelar…"></textarea>
+  <button class="teach-reveal">Revelar qué cubre una buena respuesta</button>
+  <div class="teach-checklist">
+    <p class="checklist-label">Una buena respuesta incluye:</p>
+    <ul>
+      <li>Nombra la ventana de contexto como un límite de tamaño fijo, no un cambio de humor ni un
+      error.</li>
+      <li>Explica que, a medida que un chat largo sigue creciendo, el material más antiguo desaparece
+      primero de la vista.</li>
+      <li>Sugiere empezar una conversación nueva para un tema nuevo, o repetir los datos clave si siguen
+      importando muy avanzado un hilo largo.</li>
+      <li>Deja claro que el modelo no "empeora" con el tiempo — se alcanza un límite estructural, siempre
+      el mismo.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="win-box" data-i18n="en">
+  <strong>Your win.</strong> You can now explain why a big paste costs more, why a long chat starts
+  forgetting things, and what your one real lever — the prompt — actually controls.
+</div>
+<div class="win-box" data-i18n="de">
+  <strong>Dein Gewinn.</strong> Du kannst jetzt erklären, warum ein großer Einfüge-Text mehr kostet, warum
+  ein langer Chat anfängt zu vergessen, und was dein einer echter Hebel – der Prompt – tatsächlich
+  kontrolliert.
+</div>
+<div class="win-box" data-i18n="es">
+  <strong>Tu logro.</strong> Ahora puedes explicar por qué pegar mucho texto cuesta más, por qué un chat
+  largo empieza a olvidar cosas, y qué controla realmente tu única palanca real — el prompt.
+</div>
+
+<div class="primary-source" data-i18n="en">
+  <p class="eyebrow">Primary source</p>
+  <p><a href="https://redis.io/blog/llm-context-windows/">LLM context windows: what they are & how they
+  work — Redis</a>. Plain-English, with the "working memory" analogy used above — a good ten minutes to
+  deepen this lesson with more real-world sizing examples.</p>
+</div>
+<div class="primary-source" data-i18n="de">
+  <p class="eyebrow">Primärquelle</p>
+  <p><a href="https://redis.io/blog/llm-context-windows/">LLM context windows: what they are & how they
+  work — Redis</a> (Englisch). Klar geschrieben, mit der oben verwendeten „Arbeitsgedächtnis"-Analogie –
+  gute zehn Minuten, um diese Lektion mit mehr Praxisbeispielen zur Größenordnung zu vertiefen.</p>
+</div>
+<div class="primary-source" data-i18n="es">
+  <p class="eyebrow">Fuente principal</p>
+  <p><a href="https://redis.io/blog/llm-context-windows/">LLM context windows: what they are & how they
+  work — Redis</a> (en inglés). En lenguaje claro, con la analogía de la "memoria de trabajo" usada arriba
+  — unos buenos diez minutos para profundizar esta lección con más ejemplos reales de tamaño.</p>
+</div>
+
+<h2 data-i18n="en">Next</h2>
+<h2 data-i18n="de">Als Nächstes</h2>
+<h2 data-i18n="es">Siguiente</h2>
+
+<p data-i18n="en">Next session, whenever you're ready: a hands-on walkthrough of one real tool in action, putting
+prompt, token, context, and the reality-check checklist all to work on something concrete.</p>
+<p data-i18n="de">Nächste Sitzung, sobald du bereit bist: ein praktischer Durchgang durch ein echtes Tool in
+Aktion, bei dem Prompt, Token, Kontext und die Realitäts-Checkliste an etwas Konkretem angewendet
+werden.</p>
+<p data-i18n="es">Próxima sesión, cuando estés listo: un recorrido práctico por una herramienta real en
+acción, poniendo a trabajar el prompt, el token, el contexto y la checklist de realidad sobre algo
+concreto.</p>
+
+<div class="ask-agent" data-i18n="en">
+  <strong>Ask your teacher.</strong> Good questions to try now: <em>"how big is the context window of
+  [some tool I use]?"</em>, <em>"why did this response cost more than that one?"</em>, or <em>"rewrite my
+  vague prompt to be sharper: [paste it]."</em>
+</div>
+<div class="ask-agent" data-i18n="de">
+  <strong>Frag deine Lehrkraft.</strong> Gute Fragen zum Ausprobieren: <em>„Wie groß ist das Kontextfenster
+  von [ein Tool, das ich nutze]?"</em>, <em>„Warum hat diese Antwort mehr gekostet als jene?"</em>, oder
+  <em>„Schärfe meinen vagen Prompt: [einfügen]."</em>
+</div>
+<div class="ask-agent" data-i18n="es">
+  <strong>Pregunta a tu profesor.</strong> Buenas preguntas para probar ahora: <em>"¿qué tan grande es la
+  ventana de contexto de [alguna herramienta que uso]?"</em>, <em>"¿por qué esta respuesta costó más que
+  aquella?"</em>, o <em>"afina mi prompt vago: [pégalo]."</em>
+</div>
+
+<nav class="lesson-links">
+  <a href="0002-is-this-actually-agentic.html" data-i18n="en">← Lesson 0002: Is This Actually Agentic?</a>
+  <a href="0002-is-this-actually-agentic.html" data-i18n="de">← Lektion 0002: Ist das wirklich agentisch?</a>
+  <a href="0002-is-this-actually-agentic.html" data-i18n="es">← Lección 0002: ¿Es esto realmente agéntico?</a>
+
+  <a href="../reference/glossary.html" data-i18n="en">Reference: Glossary</a>
+  <a href="../reference/glossary.html" data-i18n="de">Referenz: Glossar</a>
+  <a href="../reference/glossary.html" data-i18n="es">Referencia: Glosario</a>
+
+  <a href="../index.html" data-i18n="en">Index</a>
+  <a href="../index.html" data-i18n="de">Index</a>
+  <a href="../index.html" data-i18n="es">Índice</a>
+
+  <a href="0004-harness-and-sandbox.html" data-i18n="en">Next: Harness and Sandbox →</a>
+  <a href="0004-harness-and-sandbox.html" data-i18n="de">Weiter: Harness und Sandbox →</a>
+  <a href="0004-harness-and-sandbox.html" data-i18n="es">Siguiente: Harness y Sandbox →</a>
+</nav>
+
+</main>
+</body>
+</html>
