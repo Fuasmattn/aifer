@@ -1,7 +1,10 @@
 /* Language switcher widget + i18n visibility. Pair with lang-switch.js.
    Content elements carry data-i18n="en|de|es"; lang-switch.js toggles their
    display based on the chosen language. Default state below (all hidden)
-   avoids a flash of every language stacked before JS runs. */
+   avoids a flash of every language stacked before JS runs.
+
+   Shares its pill-button look with the theme toggle (theme-toggle.js) via the
+   .top-bar / .pill-group classes below — both sit in the same fixed corner. */
 
 /* Spanish shows by default with zero JS (Quick Look, mail previews, printing);
    lang-switch.js overrides via inline style once it runs. */
@@ -10,21 +13,27 @@
 a[data-i18n="es"], span[data-i18n="es"], strong[data-i18n="es"], em[data-i18n="es"] { display: inline; }
 li[data-i18n="es"] { display: list-item; }
 
-.lang-switch {
+.top-bar {
   position: fixed;
   top: 1rem;
   right: 1rem;
+  z-index: 10;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.pill-group {
   display: flex;
   gap: 0.2rem;
   background: var(--paper-inset);
   border: 1px solid var(--rule);
   border-radius: 20px;
   padding: 0.25rem;
-  z-index: 10;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-.lang-switch button {
+.pill-group button {
   border: none;
   background: transparent;
   padding: 0.4rem 0.7rem;
@@ -37,17 +46,18 @@ li[data-i18n="es"] { display: list-item; }
   color: var(--ink-soft);
 }
 
-.lang-switch button:hover { color: var(--ink); }
+.pill-group button:hover { color: var(--ink); }
 
-.lang-switch button[aria-pressed="true"] {
+.pill-group button[aria-pressed="true"] {
   background: var(--accent);
   color: var(--paper);
 }
 
 @media (max-width: 30em) {
-  .lang-switch { top: 0.6rem; right: 0.6rem; padding: 0.3rem; }
+  .top-bar { top: 0.6rem; right: 0.6rem; gap: 0.35rem; }
+  .pill-group { padding: 0.3rem; }
 }
 
 @media print {
-  .lang-switch { display: none; }
+  .top-bar { display: none; }
 }

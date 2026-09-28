@@ -10,13 +10,20 @@
 <link rel="stylesheet" href="../assets/lang-switch.css">
 <script src="../assets/quiz.js"></script>
 <script src="../assets/lang-switch.js"></script>
+<script src="../assets/theme-toggle.js"></script>
 </head>
 <body>
 
-<div class="lang-switch">
-  <button data-lang="en">EN</button>
-  <button data-lang="de">DE</button>
-  <button data-lang="es">ES</button>
+<div class="top-bar">
+  <div class="pill-group theme-toggle">
+    <button data-theme="dark" aria-label="Dark mode">☾</button>
+    <button data-theme="light" aria-label="Light mode">☀</button>
+  </div>
+  <div class="pill-group lang-switch">
+    <button data-lang="en">EN</button>
+    <button data-lang="de">DE</button>
+    <button data-lang="es">ES</button>
+  </div>
 </div>
 
 <header class="lesson-header">

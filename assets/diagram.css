@@ -21,7 +21,7 @@
   flex: 1 1 7rem;
   border: 1px solid var(--rule);
   border-radius: 5px;
-  background: #fbfbf7;
+  background: var(--paper-inset);
   padding: 0.55rem 0.7rem;
   position: relative;
   display: flex;
